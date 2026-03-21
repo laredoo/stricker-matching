@@ -1,0 +1,30 @@
+name: Version Check
+
+on:
+  pull_request:
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify version bump
+        shell: bash
+        run: |
+          set -euo pipefail
+          base_sha="${{ github.event.pull_request.base.sha }}"
+          head_sha="${{ github.event.pull_request.head.sha }}"
+          changed_files=$(git diff --name-only "$base_sha" "$head_sha")
+          echo "$changed_files"
+
+          if echo "$changed_files" | grep -Eq '^apps/(api|model|ui)/pyproject\.toml$|^apps/(api|model|ui)/src/.*/__init__\.py$'; then
+            echo "Version file updated."
+          else
+            echo "No version updates found."
+            echo "Run 'cz bump' in the updated service (e.g., cd apps/api && cz bump), then commit the version changes."
+            exit 1
+          fi

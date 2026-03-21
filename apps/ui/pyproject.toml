@@ -1,0 +1,42 @@
+[build-system]
+requires = [
+  "hatchling==1.29.0",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "stricker-matching-ui"
+description = "Streamlit UI for striker matching."
+requires-python = ">=3.12"
+authors = [
+
+  {name = "Lucas Laredo", email = "lucaslaredo@ufmg.br"},
+
+]
+maintainers = [
+
+  {name = "Lucas Laredo", email = "lucaslaredo@ufmg.br"},
+
+]
+
+# Version is automatically bumped using commitizen
+version = "0.1.0"
+
+dependencies = [
+  "streamlit>=1.32",
+  "plotly>=5.20",
+  "pandas>=2.2",
+]
+
+[dependency-groups]
+versioning = [
+  "commitizen==4.13.9",
+]
+
+[tool.commitizen]
+version = "0.1.0"
+version_files = [
+  "pyproject.toml",
+  "src/stricker_matching_ui/__init__.py",
+]
+update_changelog = false

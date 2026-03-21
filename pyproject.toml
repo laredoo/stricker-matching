@@ -1,0 +1,57 @@
+[build-system]
+requires = [
+    "hatchling==1.29.0", 
+    "hatch-vcs==0.5.0"
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "stricker-matching"
+description = "Stricker clustering via StatsBomb dataset."
+dynamic = ["version"]
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.12"
+authors = [
+  {name = "Lucas Laredo", email = "lucaslaredo@ufmg.br"},
+]
+maintainers = [
+  {name = "Lucas Laredo", email = "lucaslaredo@ufmg.br"},
+]
+
+dependencies = [
+    "stricker-matching-model==0.1.0"
+]
+
+packages = []
+
+[project.optional-dependencies]
+"api" = [
+    "stricker-matching-api==0.1.0"
+]
+"ui" = [
+    "stricker-matching-ui==0.1.0"
+]
+"all" = [
+    "stricker-matching-api==0.1.0",
+    "stricker-matching-ui==0.1.0"
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.3",
+  "pytest>=8.0",
+]
+
+[tool.uv.workspace]
+members = ["apps/api", "apps/ui", "apps/model"]
+
+[tool.uv.sources]
+stricker-matching-api = { workspace = true }
+stricker-matching-ui = { workspace = true }
+stricker-matching-model = { workspace = true }
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
