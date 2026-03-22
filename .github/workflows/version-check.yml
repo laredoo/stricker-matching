@@ -21,10 +21,30 @@ jobs:
           changed_files=$(git diff --name-only "$base_sha" "$head_sha")
           echo "$changed_files"
 
-          if echo "$changed_files" | grep -Eq '^apps/(api|model|ui)/pyproject\.toml$|^apps/(api|model|ui)/src/.*/__init__\.py$'; then
-            echo "Version file updated."
-          else
-            echo "No version updates found."
+          services=(api model ui)
+          missing=()
+
+          for svc in "${services[@]}"; do
+            if echo "$changed_files" | grep -q "^apps/$svc/"; then
+              version_updated=false
+              while IFS= read -r init_file; do
+                diff_output=$(git diff -U0 "$base_sha" "$head_sha" -- "$init_file")
+                if echo "$diff_output" | grep -q "^-[[:space:]]*__version__" && echo "$diff_output" | grep -q "^+[[:space:]]*__version__"; then
+                  version_updated=true
+                  break
+                fi
+              done < <(git ls-files "apps/$svc/src/**/__init__.py")
+
+              if [[ "$version_updated" != "true" ]]; then
+                missing+=("$svc")
+              fi
+            fi
+          done
+
+          if (( ${#missing[@]} > 0 )); then
+            echo "Missing __version__ update in: ${missing[*]}"
             echo "Run 'cz bump' in the updated service (e.g., cd apps/api && cz bump), then commit the version changes."
             exit 1
           fi
+
+          echo "__version__ updated for all changed services."
