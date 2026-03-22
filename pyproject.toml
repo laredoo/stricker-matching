@@ -18,9 +18,7 @@ maintainers = [
   {name = "Lucas Laredo", email = "lucaslaredo@ufmg.br"},
 ]
 
-dependencies = [
-    "tqdm>=4.67.3",
-]
+dependencies = []
 
 packages = []
 

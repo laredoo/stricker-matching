@@ -33,6 +33,13 @@ dependencies = [
 versioning = [
   "commitizen==4.13.9",
 ]
+dev = [
+  "tqdm>=4.67.3",
+]
+viz = [
+  "mplsoccer==1.6.1"
+]
+
 
 [tool.commitizen]
 version = "0.1.0"
