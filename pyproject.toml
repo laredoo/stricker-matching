@@ -18,9 +18,7 @@ maintainers = [
   {name = "Lucas Laredo", email = "lucaslaredo@ufmg.br"},
 ]
 
-dependencies = [
-    "stricker-matching-model==0.1.0"
-]
+dependencies = []
 
 packages = []
 
@@ -31,9 +29,13 @@ packages = []
 "ui" = [
     "stricker-matching-ui==0.1.0"
 ]
+"model" = [
+    "stricker-matching-model==0.1.0"
+]
 "all" = [
     "stricker-matching-api==0.1.0",
-    "stricker-matching-ui==0.1.0"
+    "stricker-matching-ui==0.1.0",
+    "stricker-matching-model==0.1.0"
 ]
 
 [dependency-groups]

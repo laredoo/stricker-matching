@@ -1247,17 +1247,18 @@ wheels = [
 [[package]]
 name = "stricker-matching"
 source = { editable = "." }
-dependencies = [
-    { name = "stricker-matching-model" },
-]
 
 [package.optional-dependencies]
 all = [
     { name = "stricker-matching-api" },
+    { name = "stricker-matching-model" },
     { name = "stricker-matching-ui" },
 ]
 api = [
     { name = "stricker-matching-api" },
+]
+model = [
+    { name = "stricker-matching-model" },
 ]
 ui = [
     { name = "stricker-matching-ui" },
@@ -1273,11 +1274,12 @@ dev = [
 requires-dist = [
     { name = "stricker-matching-api", marker = "extra == 'all'", editable = "apps/api" },
     { name = "stricker-matching-api", marker = "extra == 'api'", editable = "apps/api" },
-    { name = "stricker-matching-model", editable = "apps/model" },
+    { name = "stricker-matching-model", marker = "extra == 'all'", editable = "apps/model" },
+    { name = "stricker-matching-model", marker = "extra == 'model'", editable = "apps/model" },
     { name = "stricker-matching-ui", marker = "extra == 'all'", editable = "apps/ui" },
     { name = "stricker-matching-ui", marker = "extra == 'ui'", editable = "apps/ui" },
 ]
-provides-extras = ["all", "api", "ui"]
+provides-extras = ["all", "api", "model", "ui"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -1317,13 +1319,10 @@ name = "stricker-matching-model"
 version = "0.1.0"
 source = { editable = "apps/model" }
 dependencies = [
-    { name = "fastapi" },
     { name = "joblib" },
     { name = "numpy" },
     { name = "pandas" },
-    { name = "pydantic" },
     { name = "scikit-learn" },
-    { name = "uvicorn" },
 ]
 
 [package.dev-dependencies]
@@ -1333,13 +1332,10 @@ versioning = [
 
 [package.metadata]
 requires-dist = [
-    { name = "fastapi", specifier = ">=0.110" },
     { name = "joblib", specifier = ">=1.3" },
     { name = "numpy", specifier = ">=1.26" },
     { name = "pandas", specifier = ">=2.2" },
-    { name = "pydantic", specifier = ">=2.6" },
     { name = "scikit-learn", specifier = ">=1.4" },
-    { name = "uvicorn", specifier = ">=0.29" },
 ]
 
 [package.metadata.requires-dev]
