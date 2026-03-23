@@ -12,7 +12,7 @@ import uvicorn
 from stricker_matching_model.core.artifacts import ArtifactStore
 from stricker_matching_model.core.facade import ModelFacade
 from stricker_matching_model.core.strategies import KMeansStrategy
-from stricker_matching_model.etl.loader import StatsBombETL
+from stricker_matching_model.etl.statsbomb import StatsBombETL
 from stricker_matching_model.features.builder import FeatureBuilder
 from stricker_matching_model.inference.predictor import Predictor
 from stricker_matching_model.pipeline.builder import PipelineBuilder
