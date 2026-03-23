@@ -1,0 +1,116 @@
+"""CLI and container entrypoint for the model service."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+from typing import Any
+
+import uvicorn
+
+from stricker_matching_model.core.artifacts import ArtifactStore
+from stricker_matching_model.core.facade import ModelFacade
+from stricker_matching_model.core.strategies import KMeansStrategy
+from stricker_matching_model.etl.loader import StatsBombETL
+from stricker_matching_model.features.builder import FeatureBuilder
+from stricker_matching_model.inference.predictor import Predictor
+from stricker_matching_model.pipeline.builder import PipelineBuilder
+from stricker_matching_model.train.trainer import StatsBombTrainer
+
+
+def _build_facade(
+    artifact_path: Path,
+    demo_data: bool,
+    strategy_name: str,
+    n_clusters: int,
+) -> ModelFacade:
+    etl = StatsBombETL(data_path=None, demo=demo_data)
+    features = FeatureBuilder()
+    pipeline_builder = PipelineBuilder()
+    if strategy_name == "kmeans":
+        strategy = KMeansStrategy(n_clusters=n_clusters)
+    else:
+        raise ValueError(f"Unsupported strategy: {strategy_name}")
+    artifacts = ArtifactStore(artifact_path)
+    trainer = StatsBombTrainer(
+        etl=etl,
+        features=features,
+        pipeline_builder=pipeline_builder,
+        strategy=strategy,
+        artifacts=artifacts,
+    )
+    predictor = Predictor(artifacts=artifacts)
+    return ModelFacade(trainer=trainer, predictor=predictor)
+
+
+def _cmd_train(args: argparse.Namespace) -> None:
+    facade = _build_facade(
+        Path(args.artifact_path),
+        demo_data=args.demo,
+        strategy_name=args.strategy,
+        n_clusters=args.n_clusters,
+    )
+    facade.train()
+
+
+def _cmd_predict(args: argparse.Namespace) -> None:
+    facade = _build_facade(
+        Path(args.artifact_path),
+        demo_data=False,
+        strategy_name="kmeans",
+        n_clusters=3,
+    )
+    payload = json.loads(Path(args.input_json).read_text())
+    rows = payload["rows"]
+    labels = facade.predict(rows)
+    output: dict[str, Any] = {"labels": labels}
+    if args.output_json:
+        Path(args.output_json).write_text(json.dumps(output))
+    else:
+        print(json.dumps(output))
+
+
+def _cmd_server(args: argparse.Namespace) -> None:
+    uvicorn.run(
+        "stricker_matching_model.service.api:app",
+        host=args.host,
+        port=args.port,
+        reload=args.reload,
+    )
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Stricker model CLI")
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    train = sub.add_parser("train", help="Train and persist the model artifact")
+    train.add_argument("--artifact-path", default="artifacts/model.joblib")
+    train.add_argument("--demo", action="store_true", help="Use demo data")
+    train.add_argument("--strategy", default="kmeans", choices=["kmeans"])
+    train.add_argument("--n-clusters", type=int, default=3)
+    train.set_defaults(func=_cmd_train)
+
+    predict = sub.add_parser("predict", help="Predict using a saved artifact")
+    predict.add_argument("--artifact-path", default="artifacts/model.joblib")
+    predict.add_argument("--input-json", required=True)
+    predict.add_argument("--output-json")
+    predict.set_defaults(func=_cmd_predict)
+
+    server = sub.add_parser("server", help="Start the model HTTP service")
+    server.add_argument("--host", default="0.0.0.0")
+    server.add_argument("--port", type=int, default=8001)
+    server.add_argument("--reload", action="store_true")
+    server.set_defaults(func=_cmd_server)
+
+    return parser
+
+
+def main() -> None:
+    parser = build_parser()
+    args = parser.parse_args()
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()
