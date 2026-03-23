@@ -1616,10 +1616,13 @@ name = "stricker-matching-model"
 version = "0.1.0"
 source = { editable = "apps/model" }
 dependencies = [
+    { name = "fastapi" },
     { name = "joblib" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "pydantic" },
     { name = "scikit-learn" },
+    { name = "uvicorn" },
 ]
 
 [package.dev-dependencies]
@@ -1635,14 +1638,17 @@ viz = [
 
 [package.metadata]
 requires-dist = [
+    { name = "fastapi", specifier = "==0.135.1" },
     { name = "joblib", specifier = "==1.5.3" },
     { name = "numpy", specifier = "==2.4.3" },
     { name = "pandas", specifier = "==2.3.3" },
+    { name = "pydantic", specifier = "==2.12.5" },
     { name = "scikit-learn", specifier = "==1.8.0" },
+    { name = "uvicorn", specifier = "==0.42.0" },
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "tqdm", specifier = ">=4.67.3" }]
+dev = [{ name = "tqdm", specifier = "==4.67.3" }]
 versioning = [{ name = "commitizen", specifier = "==4.13.9" }]
 viz = [{ name = "mplsoccer", specifier = "==1.6.1" }]
 

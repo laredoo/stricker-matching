@@ -27,6 +27,9 @@ dependencies = [
   "pandas==2.3.3",
   "numpy==2.4.3",
   "joblib==1.5.3",
+  "uvicorn==0.42.0",
+  "pydantic==2.12.5",
+  "fastapi==0.135.1",
 ]
 
 [dependency-groups]
@@ -34,7 +37,7 @@ versioning = [
   "commitizen==4.13.9",
 ]
 dev = [
-  "tqdm>=4.67.3",
+  "tqdm==4.67.3",
 ]
 viz = [
   "mplsoccer==1.6.1"
