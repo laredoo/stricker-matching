@@ -58,6 +58,7 @@ def _cmd_etl(args: argparse.Namespace) -> None:
         pitch_width=args.pitch_width,
         target_length=args.target_length,
         target_width=args.target_width,
+        overwrite_files=args.overwrite_files,
     )
     files = etl.extract()
     normalized_stream = etl.transform(files)
@@ -121,6 +122,7 @@ def build_parser() -> argparse.ArgumentParser:
     etl.add_argument("--pitch-width", type=float, default=80.0)
     etl.add_argument("--target-length", type=float, default=105.0)
     etl.add_argument("--target-width", type=float, default=68.0)
+    etl.add_argument("--overwrite-files", action="store_true")
     etl.set_defaults(func=_cmd_etl)
 
     train = sub.add_parser("train", help="Train and persist the model artifact")

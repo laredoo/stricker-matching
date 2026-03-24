@@ -32,6 +32,7 @@ class StatsBombETL(BaseETL):
     pitch_width: float = 80.0
     target_length: float | None = 105.0
     target_width: float | None = 68.0
+    overwrite_files: bool = False
     striker_position_ids: set[int] = field(
         default_factory=lambda: {
             17,  # Right Wing
@@ -45,12 +46,15 @@ class StatsBombETL(BaseETL):
 
     def extract(self) -> Iterable[Path]:
         """Iterate over raw StatsBomb event files."""
+        logger.info("Extracting raw event files from %s", self.data_path)
+
         if self.data_path is None:
             raise FileNotFoundError("data_path is required to extract StatsBomb data")
         events_root = self.data_path / "raw" / "events"
         if not events_root.exists():
             raise FileNotFoundError(f"Events directory not found at {events_root}")
         files = sorted(events_root.glob("*.json"))
+
         logger.info("Found %s event files in %s", len(files), events_root)
         return files
 
@@ -86,7 +90,6 @@ class StatsBombETL(BaseETL):
                 tqdm.write(f"Writing normalized events for match {match_id}")
             match_path = self.write_normalized(match_id, events, output_root)
             match_written.append(match_path)
-        logger.info("Wrote %s normalized match event files", len(match_written))
         return match_written
 
     def load_events(self, file_path: Path, match_id: int) -> pd.DataFrame:
@@ -112,9 +115,9 @@ class StatsBombETL(BaseETL):
         player_ids = events["player"].str.get("id")
         mask = player_ids.isin(striker_ids)
         filtered = events.loc[mask].copy()
-        filtered["player_id"] = player_ids[mask].values
+        filtered["player_id"] = player_ids[mask].values.astype(int)
         filtered = filtered.reset_index(drop=True)
-        if logger.isEnabledFor(logging.INFO):
+        if logger.isEnabledFor(logging.DEBUG):
             tqdm.write(
                 f"Match {match_id} filtered events from {len(events)} rows to {len(filtered)} rows",
             )
@@ -146,6 +149,12 @@ class StatsBombETL(BaseETL):
         match_file = matches_root / f"{match_id}.{suffix}"
 
         if self.output_format == "json":
+            if match_file.exists() and not self.overwrite_files:
+                if logger.isEnabledFor(logging.DEBUG):
+                    tqdm.write(
+                        f"Overwrite Files flag set to False and Match file {match_file} already exists; skipping write"
+                    )
+                return match_file
             events.to_json(match_file, index=False)
         else:
             raise ValueError(
@@ -154,7 +163,7 @@ class StatsBombETL(BaseETL):
 
         return match_file
 
-    def write_player(  # ToDo: Refactor this method
+    def write_players(  # ToDo: Refactor this method
         self, match_id: int, events: pd.DataFrame, output_root: Path, suffix: str
     ) -> Path:
         players_root = output_root / "players"
@@ -166,13 +175,31 @@ class StatsBombETL(BaseETL):
             )
 
         for player_id, player_events in events.groupby("player_id"):
+            if logger.isEnabledFor(logging.DEBUG):
+                tqdm.write(f"Writing player {player_id} events for match {match_id}")
+
             player_events = player_events.copy()
             player_events["match_id"] = match_id
-            player_file = players_root / f"{int(player_id)}.{suffix}"
+
+            player_file = players_root / f"{player_id}.{suffix}"
+
             if self.output_format == "json":
                 if player_file.exists():
                     existing = pd.read_json(player_file)
-                    combined = pd.concat([existing, player_events], ignore_index=True)
+
+                    existing_event_ids = existing["id"].unique()
+                    new_events = player_events[
+                        ~player_events["id"].isin(existing_event_ids)
+                    ]
+
+                    if new_events.empty:
+                        if logger.isEnabledFor(logging.DEBUG):
+                            tqdm.write(
+                                f"No new events for player {player_id} in match {match_id}; skipping write"
+                            )
+                        continue
+
+                    combined = pd.concat([existing, new_events], ignore_index=True)
                     combined.to_json(player_file, index=False, orient="records")
                 else:
                     player_events.to_json(player_file, index=False, orient="records")
@@ -190,7 +217,7 @@ class StatsBombETL(BaseETL):
         suffix = "json" if self.output_format == "json" else self.output_format
 
         match_file = self.write_match(match_id, events, output_root, suffix)
-        _ = self.write_player(match_id, events, output_root, suffix)
+        _ = self.write_players(match_id, events, output_root, suffix)
 
         return match_file
 
