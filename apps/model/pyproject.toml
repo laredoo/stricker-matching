@@ -38,6 +38,7 @@ versioning = [
 ]
 dev = [
   "tqdm==4.67.3",
+  "ipykernel==7.2.0"
 ]
 viz = [
   "mplsoccer==1.6.1"
