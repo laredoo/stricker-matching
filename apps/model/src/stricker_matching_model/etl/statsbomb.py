@@ -80,14 +80,14 @@ class StatsBombETL(BaseETL):
             self.output_format,
         )
 
-        written: list[Path] = []
+        match_written: list[Path] = []
         for match_id, events in tqdm(transformed, desc="Write normalized"):
             if logger.isEnabledFor(logging.DEBUG):
                 tqdm.write(f"Writing normalized events for match {match_id}")
-            path = self.write_normalized(match_id, events, output_root)
-            written.append(path)
-        logger.info("Wrote %s normalized event files", len(written))
-        return written
+            match_path = self.write_normalized(match_id, events, output_root)
+            match_written.append(match_path)
+        logger.info("Wrote %s normalized match event files", len(match_written))
+        return match_written
 
     def load_events(self, file_path: Path, match_id: int) -> pd.DataFrame:
         striker_ids = self.load_striker_ids(match_id)
@@ -110,7 +110,10 @@ class StatsBombETL(BaseETL):
             return events.iloc[0:0].copy()
 
         player_ids = events["player"].str.get("id")
-        filtered = events[player_ids.isin(striker_ids)].reset_index(drop=True)
+        mask = player_ids.isin(striker_ids)
+        filtered = events.loc[mask].copy()
+        filtered["player_id"] = player_ids[mask].values
+        filtered = filtered.reset_index(drop=True)
         if logger.isEnabledFor(logging.INFO):
             tqdm.write(
                 f"Match {match_id} filtered events from {len(events)} rows to {len(filtered)} rows",
@@ -134,22 +137,60 @@ class StatsBombETL(BaseETL):
         out["y_norm"] = y
         return out
 
+    def write_match(
+        self, match_id: int, events: pd.DataFrame, output_root: Path, suffix: str
+    ) -> Path:
+        matches_root = output_root / "matches"
+        matches_root.mkdir(parents=True, exist_ok=True)
+
+        match_file = matches_root / f"{match_id}.{suffix}"
+
+        if self.output_format == "json":
+            events.to_json(match_file, index=False)
+        else:
+            raise ValueError(
+                f"Unsupported output_format: {self.output_format}. Use json."
+            )
+
+        return match_file
+
+    def write_player(
+        self, match_id: int, events: pd.DataFrame, output_root: Path, suffix: str
+    ) -> Path:
+        players_root = output_root / "players"
+        players_root.mkdir(parents=True, exist_ok=True)
+
+        if "player_id" not in events.columns:
+            raise ValueError(
+                f"Missing player_id column in match {match_id}; it is required in events to write player files"
+            )
+
+        for player_id, player_events in events.groupby("player_id"):
+            player_file = players_root / f"{int(player_id)}.{suffix}"
+            if self.output_format == "json":
+                if player_file.exists():
+                    existing = pd.read_json(player_file)
+                    combined = pd.concat([existing, player_events], ignore_index=True)
+                    combined.to_json(player_file, index=False, orient="records")
+                else:
+                    player_events.to_json(player_file, index=False, orient="records")
+            else:
+                raise ValueError(
+                    f"Unsupported output_format: {self.output_format}. Use json."
+                )
+
+        return player_file
+
     def write_normalized(
         self, match_id: int, events: pd.DataFrame, output_root: Path
     ) -> Path:
-        suffix = "json" if self.output_format == "json" else "csv"
-        output_file = output_root / f"{match_id}.{suffix}"
 
-        if self.output_format == "json":
-            events.to_json(output_file, index=False)
-        elif self.output_format == "csv":
-            events.to_csv(output_file, index=False)
-        else:
-            raise ValueError(
-                f"Unsupported output_format: {self.output_format}. Use json or csv."
-            )
+        suffix = "json" if self.output_format == "json" else self.output_format
 
-        return output_file
+        match_file = self.write_match(match_id, events, output_root, suffix)
+        _ = self.write_player(match_id, events, output_root, suffix)
+
+        return match_file
 
     def _resolve_output_path(self) -> Path:
         if self.output_path:

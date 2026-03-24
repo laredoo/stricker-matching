@@ -61,8 +61,8 @@ def _cmd_etl(args: argparse.Namespace) -> None:
     )
     files = etl.extract()
     normalized_stream = etl.transform(files)
-    written = etl.load(normalized_stream)
-    logger.info("Wrote %s normalized event files", len(written))
+    match_written = etl.load(normalized_stream)
+    logger.info("Wrote %s normalized match event files", len(match_written))
 
 
 def _cmd_train(args: argparse.Namespace) -> None:
@@ -114,7 +114,7 @@ def build_parser() -> argparse.ArgumentParser:
     etl.add_argument("--data-path", required=True)
     etl.add_argument("--output-path")
     etl.add_argument(
-        "--format", choices=["json", "csv"], default="json"
+        "--format", choices=["json"], default="json"
     )  # include parquet in the future
     etl.add_argument("--flip-left-to-right", action="store_true")
     etl.add_argument("--pitch-length", type=float, default=120.0)
