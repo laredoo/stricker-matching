@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -15,8 +16,11 @@ from stricker_matching_model.core.strategies import KMeansStrategy
 from stricker_matching_model.etl.statsbomb import StatsBombETL
 from stricker_matching_model.features.builder import FeatureBuilder
 from stricker_matching_model.inference.predictor import Predictor
+from stricker_matching_model.logging import configure_logging, get_logger
 from stricker_matching_model.pipeline.builder import PipelineBuilder
 from stricker_matching_model.train.trainer import StatsBombTrainer
+
+logger = get_logger(__name__)
 
 
 def _build_facade(
@@ -42,6 +46,23 @@ def _build_facade(
     )
     predictor = Predictor(artifacts=artifacts)
     return ModelFacade(trainer=trainer, predictor=predictor)
+
+
+def _cmd_etl(args: argparse.Namespace) -> None:
+    etl = StatsBombETL(
+        data_path=Path(args.data_path),
+        output_path=Path(args.output_path) if args.output_path else None,
+        output_format=args.format,
+        flip_left_to_right=args.flip_left_to_right,
+        pitch_length=args.pitch_length,
+        pitch_width=args.pitch_width,
+        target_length=args.target_length,
+        target_width=args.target_width,
+    )
+    files = etl.extract()
+    normalized_stream = etl.transform(files)
+    written = etl.load(normalized_stream)
+    logger.info("Wrote %s normalized event files", len(written))
 
 
 def _cmd_train(args: argparse.Namespace) -> None:
@@ -82,7 +103,25 @@ def _cmd_server(args: argparse.Namespace) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Stricker model CLI")
+    parser.add_argument(
+        "--log-level",
+        default=os.getenv("STRICKER_LOG_LEVEL", "INFO"),
+        help="Set logging level (DEBUG, INFO, WARNING, ERROR)",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
+
+    etl = sub.add_parser("etl", help="Normalize StatsBomb event files")
+    etl.add_argument("--data-path", required=True)
+    etl.add_argument("--output-path")
+    etl.add_argument(
+        "--format", choices=["json", "csv"], default="json"
+    )  # include parquet in the future
+    etl.add_argument("--flip-left-to-right", action="store_true")
+    etl.add_argument("--pitch-length", type=float, default=120.0)
+    etl.add_argument("--pitch-width", type=float, default=80.0)
+    etl.add_argument("--target-length", type=float, default=105.0)
+    etl.add_argument("--target-width", type=float, default=68.0)
+    etl.set_defaults(func=_cmd_etl)
 
     train = sub.add_parser("train", help="Train and persist the model artifact")
     train.add_argument("--artifact-path", default="artifacts/model.joblib")
@@ -109,6 +148,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
+    configure_logging(args.log_level)
     args.func(args)
 
 
