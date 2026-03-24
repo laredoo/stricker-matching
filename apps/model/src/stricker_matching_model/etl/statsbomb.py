@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from pathlib import Path
 import logging
+from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Generator, Iterable
 
 import pandas as pd
@@ -26,12 +26,22 @@ class StatsBombETL(BaseETL):
 
     data_path: Path | None = None
     output_path: Path | None = None
-    output_format: str = "json"
+    output_format: str = "parquet"
     flip_left_to_right: bool = False
     pitch_length: float = 120.0
     pitch_width: float = 80.0
     target_length: float | None = 105.0
     target_width: float | None = 68.0
+    striker_position_ids: set[int] = field(
+        default_factory=lambda: {
+            17,  # Right Wing
+            21,  # Left Wing
+            22,  # Right Center Forward
+            23,  # Stricker / Center Forward
+            24,  # Left Center Forward
+            25,  # Secondary Striker
+        }
+    )
 
     def extract(self) -> Iterable[Path]:
         """Iterate over raw StatsBomb event files."""
@@ -56,7 +66,7 @@ class StatsBombETL(BaseETL):
             if logger.isEnabledFor(logging.DEBUG):
                 tqdm.write(f"Normalizing match {file_path.stem}")
             match_id = int(file_path.stem)
-            events = self.load_events(file_path)
+            events = self.load_events(file_path, match_id)
             normalized = self.normalize_coords(events)
             yield match_id, normalized
 
@@ -79,7 +89,8 @@ class StatsBombETL(BaseETL):
         logger.info("Wrote %s normalized event files", len(written))
         return written
 
-    def load_events(self, file_path: Path) -> pd.DataFrame:
+    def load_events(self, file_path: Path, match_id: int) -> pd.DataFrame:
+        striker_ids = self.load_striker_ids(match_id)
         events = pd.read_json(file_path)
         events = events.dropna(
             subset=["location"]
@@ -87,7 +98,24 @@ class StatsBombETL(BaseETL):
         events[["x", "y"]] = pd.DataFrame(
             events["location"].tolist(), index=events.index
         )
-        return events
+        if not striker_ids:
+            if logger.isEnabledFor(logging.INFO):
+                tqdm.write(f"Match {match_id} has no striker ids; dropping all events")
+            return events.iloc[0:0].copy()
+        if "player" not in events.columns:
+            if logger.isEnabledFor(logging.INFO):
+                tqdm.write(
+                    f"Match {match_id} missing player column; dropping all events"
+                )
+            return events.iloc[0:0].copy()
+
+        player_ids = events["player"].str.get("id")
+        filtered = events[player_ids.isin(striker_ids)].reset_index(drop=True)
+        if logger.isEnabledFor(logging.INFO):
+            tqdm.write(
+                f"Match {match_id} filtered events from {len(events)} rows to {len(filtered)} rows",
+            )
+        return filtered
 
     def normalize_coords(self, events: pd.DataFrame) -> pd.DataFrame:
         out = events.copy()
@@ -129,3 +157,42 @@ class StatsBombETL(BaseETL):
         if not self.data_path:
             raise FileNotFoundError("output_path or data_path is required")
         return self.data_path / "processed" / "events"
+
+    def load_striker_ids(self, match_id: int) -> set[int]:
+        if not self.data_path:
+            if logger.isEnabledFor(logging.WARNING):
+                tqdm.write("data_path missing; cannot resolve striker ids")
+            return set()
+
+        lineups_path = self.data_path / "raw" / "lineups" / f"{match_id}.json"
+        if not lineups_path.exists():
+            if logger.isEnabledFor(logging.WARNING):
+                tqdm.write(f"Lineups file missing for match {match_id}")
+            return set()
+
+        lineups = pd.read_json(lineups_path)
+        if "lineup" not in lineups.columns:
+            if logger.isEnabledFor(logging.WARNING):
+                tqdm.write(f"Lineups file missing lineup data for match {match_id}")
+            return set()
+
+        lineup_flat = lineups["lineup"].explode().dropna()
+        lineup_norm = pd.json_normalize(lineup_flat)
+        if "positions" not in lineup_norm.columns or "player_id" not in lineup_norm:
+            if logger.isEnabledFor(logging.WARNING):
+                tqdm.write(
+                    f"Lineups file missing position details for match {match_id}"
+                )
+            return set()
+
+        positions = lineup_norm[["player_id", "positions"]].explode("positions")
+        positions = positions.dropna(subset=["positions"])
+        if positions.empty:
+            return set()
+
+        positions_norm = pd.json_normalize(positions["positions"])
+        positions_norm["player_id"] = positions["player_id"].values
+        striker_rows = positions_norm[
+            positions_norm["position_id"].isin(self.striker_position_ids)
+        ]
+        return set(striker_rows["player_id"].unique())
