@@ -154,7 +154,7 @@ class StatsBombETL(BaseETL):
 
         return match_file
 
-    def write_player(
+    def write_player(  # ToDo: Refactor this method
         self, match_id: int, events: pd.DataFrame, output_root: Path, suffix: str
     ) -> Path:
         players_root = output_root / "players"
@@ -166,6 +166,8 @@ class StatsBombETL(BaseETL):
             )
 
         for player_id, player_events in events.groupby("player_id"):
+            player_events = player_events.copy()
+            player_events["match_id"] = match_id
             player_file = players_root / f"{int(player_id)}.{suffix}"
             if self.output_format == "json":
                 if player_file.exists():
