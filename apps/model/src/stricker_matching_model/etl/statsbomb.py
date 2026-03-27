@@ -71,6 +71,7 @@ class StatsBombETL(BaseETL):
                 tqdm.write(f"Normalizing match {file_path.stem}")
             match_id = int(file_path.stem)
             events = self.load_events(file_path, match_id)
+            events = self.add_pitch_zone(events)
             normalized = self.normalize_coords(events)
             yield match_id, normalized
 
@@ -139,6 +140,35 @@ class StatsBombETL(BaseETL):
         out["x_norm"] = x
         out["y_norm"] = y
         return out
+
+    def add_pitch_zone(self, events: pd.DataFrame) -> pd.DataFrame:
+        if events.empty:
+            events["pitch_zone"] = pd.NA
+            return events
+
+        x = events["x"]
+        y = events["y"]
+
+        zone_1 = (
+            x.between(102, 120)
+            & ((y.between(18, 30)) | (y.between(50, 62)))
+        )
+        zone_2 = x.between(102, 120) & y.between(30, 50)
+        zone_3 = (
+            x.between(60, 120)
+            & ((y.between(0, 18)) | (y.between(62, 80)))
+        )
+        zone_4 = x.between(91, 102) & y.between(18, 62)
+        zone_5 = x.between(60, 91) & y.between(18, 62)
+
+        events = events.copy()
+        events["pitch_zone"] = pd.NA
+        events.loc[zone_1, "pitch_zone"] = 1
+        events.loc[zone_2, "pitch_zone"] = 2
+        events.loc[zone_3, "pitch_zone"] = 3
+        events.loc[zone_4, "pitch_zone"] = 4
+        events.loc[zone_5, "pitch_zone"] = 5
+        return events
 
     def write_match(
         self, match_id: int, events: pd.DataFrame, output_root: Path, suffix: str
