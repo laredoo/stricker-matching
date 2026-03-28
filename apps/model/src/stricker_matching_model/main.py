@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import time
 from pathlib import Path
 from typing import Any
 
@@ -94,6 +95,7 @@ def _cmd_predict(args: argparse.Namespace) -> None:
 
 
 def _cmd_features(args: argparse.Namespace) -> None:
+
     builder = FeatureBuilder()
     data_path = Path(args.data_path)
     output_path = (
@@ -101,7 +103,17 @@ def _cmd_features(args: argparse.Namespace) -> None:
         if args.output_path
         else data_path / "processed" / "features" / "player_features.json"
     )
-    result = builder.build(data_path, output_path)
+    viz_dir = data_path / "features" / "viz"
+    if args.plot_features:
+        logger.warning(
+            "Feature plotting enabled; this will significantly increase runtime and should not be combined with model execution."
+        )
+    result = builder.build(
+        data_path,
+        output_path,
+        plot_features=args.plot_features,
+        viz_dir=viz_dir,
+    )
     logger.info("Wrote feature file to %s", result)
 
 
@@ -153,6 +165,11 @@ def build_parser() -> argparse.ArgumentParser:
     features = sub.add_parser("features", help="Build player feature dataset")
     features.add_argument("--data-path", required=True)
     features.add_argument("--output-path")
+    features.add_argument(
+        "--plot-features",
+        action="store_true",
+        help="Generate feature plots in data/features/viz",
+    )
     features.set_defaults(func=_cmd_features)
 
     server = sub.add_parser("server", help="Start the model HTTP service")
@@ -165,10 +182,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
+    start_time = time.perf_counter()
     parser = build_parser()
     args = parser.parse_args()
     configure_logging(args.log_level)
     args.func(args)
+    elapsed = time.perf_counter() - start_time
+    logger.info("Execution completed in %.2fs", elapsed)
 
 
 if __name__ == "__main__":

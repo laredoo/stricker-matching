@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 from stricker_matching_model.logging import get_logger
+from stricker_matching_model.features.plotting import FeaturePlotter
 
 logger = get_logger(__name__)
 
@@ -13,6 +14,7 @@ class FeatureBuilderContext:
         self,
     ) -> None:
         self.logger = logger
+        self._plotter = FeaturePlotter()
 
         self._zone_ids = [1, 2, 3, 4, 5]
         self._event_type_ids = {
@@ -53,18 +55,28 @@ class FeatureBuilderContext:
         }
 
     def calculate_features(
-        self, players_list: list[int], all_events: pd.DataFrame
+        self,
+        players_list: list[int],
+        all_events: pd.DataFrame,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
     ) -> list[pd.DataFrame]:
         return [
-            self._calc_zone_event_proportions(players_list, all_events),
-            self._calc_pass_outcome_proportions(players_list, all_events),
-            self._calc_shot_features(players_list, all_events),
+            self._calc_zone_event_proportions(
+                players_list, all_events, plot_features, viz_dir
+            ),
+            self._calc_pass_outcome_proportions(
+                players_list, all_events, plot_features, viz_dir
+            ),
+            self._calc_shot_features(players_list, all_events, plot_features, viz_dir),
         ]
 
     def _calc_zone_event_proportions(
         self,
         players_list: list[int],
         all_events: pd.DataFrame,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
     ) -> pd.DataFrame:
 
         interested_event_types = {
@@ -101,12 +113,19 @@ class FeatureBuilderContext:
             for zone, type_id in features.columns
         ]
 
-        return features.reset_index()
+        features = features.reset_index()
+
+        if plot_features:
+            self._plotter.plot_zone_event_proportions(features, viz_dir)
+
+        return features
 
     def _calc_pass_outcome_proportions(
         self,
         players_list: list[int],
         all_events: pd.DataFrame,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
     ) -> pd.DataFrame:
         short_pass_max_length = 15.0
 
@@ -137,12 +156,19 @@ class FeatureBuilderContext:
 
         proportions = counts.div(total_passes.replace(0, np.nan), axis=0).fillna(0)
         proportions.index.name = "player_id"
-        return proportions.reset_index()
+        features = proportions.reset_index()
+
+        if plot_features:
+            self._plotter.plot_pass_outcome_proportions(features, viz_dir)
+
+        return features
 
     def _calc_shot_features(
         self,
         players_list: list[int],
         all_events: pd.DataFrame,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
     ) -> pd.DataFrame:
         shot_events = self._prepare_shot_events(all_events)
 
@@ -174,7 +200,12 @@ class FeatureBuilderContext:
         )
         features["avg_statsbomb_xg"] = self._calc_shot_xg(shot_events, players_list)
 
-        return features.reset_index()
+        features = features.reset_index()
+
+        if plot_features:
+            self._plotter.plot_shot_features(features, viz_dir)
+
+        return features
 
     def _prepare_shot_events(self, all_events: pd.DataFrame) -> pd.DataFrame:
         shot_events = all_events[all_events["type"].str.get("id") == 16].copy()
@@ -253,7 +284,7 @@ class FeatureBuilderContext:
         players_list: list[int],
         total_shots: pd.Series,
     ) -> pd.Series:
-        not_open_play = shot_events[~shot_events["shot_type_name"] == "Open Play"]
+        not_open_play = shot_events[shot_events["shot_type_name"] != "Open Play"]
         counts = (
             not_open_play.groupby("player_id")
             .size()

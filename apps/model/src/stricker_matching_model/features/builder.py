@@ -31,19 +31,35 @@ class FeatureBuilder(FeatureBuilderContext):
         self._all_players_events = pd.DataFrame()
         self._all_matches_events = pd.DataFrame()
 
-    def build(self, data: Iterable[Path], output_path: Path) -> list[list[float]]:
+    def build(
+        self,
+        data: Iterable[Path],
+        output_path: Path,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
+    ) -> list[list[float]]:
         self.logger.info("Starting to build features...")
 
         self._populate_variables(data)
 
-        features = self._calculate_features()
+        features = self._calculate_features(
+            plot_features=plot_features,
+            viz_dir=viz_dir,
+        )
 
         return features.drop(columns=["player_id"]).to_numpy().tolist()
 
-    def _calculate_features(self) -> pd.DataFrame:
+    def _calculate_features(
+        self,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
+    ) -> pd.DataFrame:
 
         feature_blocks = self.calculate_features(
-            self._players_list, self._all_players_events
+            self._players_list,
+            self._all_players_events,
+            plot_features=plot_features,
+            viz_dir=viz_dir,
         )
 
         features = self._features.set_index("player_id")
