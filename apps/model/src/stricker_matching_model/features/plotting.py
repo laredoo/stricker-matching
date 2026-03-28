@@ -111,6 +111,50 @@ class FeaturePlotter:
             fig.savefig(player_dir / f"{feature_name}.png", dpi=150)
             plt.close(fig)
 
+    def plot_territorial_shrinkage(
+        self,
+        events: pd.DataFrame,
+        hulls: dict[int, np.ndarray],
+        viz_dir: Path | None,
+        feature_name: str,
+    ) -> None:
+        if viz_dir is None:
+            return
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            logger.warning(
+                "matplotlib is not installed; skipping plots for %s",
+                feature_name,
+            )
+            return
+
+        viz_dir.mkdir(parents=True, exist_ok=True)
+
+        for player_id, hull in hulls.items():
+            player_dir = viz_dir / self._player_id_dirname(player_id)
+            player_dir.mkdir(parents=True, exist_ok=True)
+
+            player_events = events[events["player_id"] == player_id]
+            fig, ax = plt.subplots(figsize=(5, 4))
+            ax.scatter(player_events["x"], player_events["y"], s=8, alpha=0.6)
+
+            if hull.shape[0] >= 3:
+                closed = np.vstack([hull, hull[0]])
+                ax.plot(closed[:, 0], closed[:, 1], color="#e45756", linewidth=1.5)
+                ax.fill(closed[:, 0], closed[:, 1], color="#e45756", alpha=0.15)
+            elif hull.shape[0] == 2:
+                ax.plot(hull[:, 0], hull[:, 1], color="#e45756", linewidth=1.5)
+            elif hull.shape[0] == 1:
+                ax.scatter(hull[0, 0], hull[0, 1], color="#e45756", s=30)
+
+            ax.set_title(feature_name)
+            ax.set_xlabel("x")
+            ax.set_ylabel("y")
+            fig.tight_layout()
+            fig.savefig(player_dir / f"{feature_name}.png", dpi=150)
+            plt.close(fig)
+
     def plot_involvement_slope(
         self,
         events: pd.DataFrame,

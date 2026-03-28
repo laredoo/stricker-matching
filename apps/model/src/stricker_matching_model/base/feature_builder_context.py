@@ -62,6 +62,9 @@ class FeatureBuilderContext:
         viz_dir: Path | None = None,
     ) -> list[pd.DataFrame]:
         return [
+            self._calc_territorial_shrinkage(
+                players_list, all_events, plot_features, viz_dir
+            ),
             self._calc_involvement_slope(
                 players_list, all_events, plot_features, viz_dir
             ),
@@ -277,7 +280,6 @@ class FeatureBuilderContext:
             39,
             43,
         ]
-
         events = all_events.dropna(
             subset=["minute", "period", "type", "match_id"]
         ).copy()
@@ -344,6 +346,89 @@ class FeatureBuilderContext:
             )
 
         return features
+
+    def _calc_territorial_shrinkage(
+        self,
+        players_list: list[int],
+        all_events: pd.DataFrame,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
+    ) -> pd.DataFrame:
+        events = all_events.dropna(subset=["x", "y"]).copy()
+        keep_quantile = 0.75
+
+        areas: dict[int, float] = {}
+        hulls: dict[int, np.ndarray] = {}
+
+        for player_id, group in events.groupby("player_id"):
+            points = group[["x", "y"]].to_numpy(dtype=float)
+            points = self._filter_spatial_outliers(points, keep_quantile)
+            hull = self._convex_hull(points)
+            hulls[int(player_id)] = hull
+            areas[int(player_id)] = self._polygon_area(hull)
+
+        features = pd.DataFrame({"player_id": players_list})
+        features["territorial_shrinkage_area"] = (
+            pd.Series(areas).reindex(players_list).fillna(0).values
+        )
+
+        if plot_features:
+            self._plotter.plot_territorial_shrinkage(
+                events,
+                hulls,
+                viz_dir,
+                feature_name="territorial_shrinkage_area",
+            )
+
+        return features
+
+    def _convex_hull(self, points: np.ndarray) -> np.ndarray:
+        if points.size == 0:
+            return np.empty((0, 2), dtype=float)
+        unique = np.unique(points, axis=0)
+        if len(unique) <= 2:
+            return unique
+
+        sorted_points = sorted(unique.tolist())
+
+        def cross(o: list[float], a: list[float], b: list[float]) -> float:
+            return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+
+        lower: list[list[float]] = []
+        for p in sorted_points:
+            while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+                lower.pop()
+            lower.append(p)
+
+        upper: list[list[float]] = []
+        for p in reversed(sorted_points):
+            while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+                upper.pop()
+            upper.append(p)
+
+        hull = lower[:-1] + upper[:-1]
+        return np.array(hull, dtype=float)
+
+    def _polygon_area(self, polygon: np.ndarray) -> float:
+        if polygon.shape[0] < 3:
+            return 0.0
+        x = polygon[:, 0]
+        y = polygon[:, 1]
+        return 0.5 * float(
+            np.abs(np.dot(x, np.roll(y, -1)) - np.dot(y, np.roll(x, -1)))
+        )
+
+    def _filter_spatial_outliers(
+        self,
+        points: np.ndarray,
+        keep_quantile: float,
+    ) -> np.ndarray:
+        if points.size == 0:
+            return points
+        median = np.median(points, axis=0)
+        distances = np.sqrt(((points - median) ** 2).sum(axis=1))
+        cutoff = np.quantile(distances, keep_quantile)
+        return points[distances <= cutoff]
 
     def _linear_regression_slope(self, x: np.ndarray, y: np.ndarray) -> float:
         x_mean = float(x.mean())
