@@ -11,7 +11,11 @@ from typing import Any
 
 import uvicorn
 
-from stricker_matching_model.core.artifacts import ArtifactStore
+from stricker_matching_model.core.artifacts import (
+    ArtifactStore,
+    default_model_artifact_path,
+    default_model_output_path,
+)
 from stricker_matching_model.core.facade import ModelFacade
 from stricker_matching_model.core.strategies import KMeansStrategy
 from stricker_matching_model.etl.statsbomb import StatsBombETL
@@ -19,7 +23,7 @@ from stricker_matching_model.features.builder import FeatureBuilder
 from stricker_matching_model.inference.predictor import Predictor
 from stricker_matching_model.logging import configure_logging, get_logger
 from stricker_matching_model.pipeline.builder import PipelineBuilder
-from stricker_matching_model.train.trainer import StatsBombTrainer
+from stricker_matching_model.train.trainer import FeatureTrainer, StatsBombTrainer
 
 logger = get_logger(__name__)
 
@@ -29,22 +33,35 @@ def _build_facade(
     demo_data: bool,
     strategy_name: str,
     n_clusters: int,
+    features_path: Path | None,
 ) -> ModelFacade:
-    etl = StatsBombETL(data_path=None, demo=demo_data)
-    features = FeatureBuilder()
     pipeline_builder = PipelineBuilder()
     if strategy_name == "kmeans":
         strategy = KMeansStrategy(n_clusters=n_clusters)
     else:
         raise ValueError(f"Unsupported strategy: {strategy_name}")
     artifacts = ArtifactStore(artifact_path)
-    trainer = StatsBombTrainer(
-        etl=etl,
-        features=features,
-        pipeline_builder=pipeline_builder,
-        strategy=strategy,
-        artifacts=artifacts,
-    )
+    output_path = default_model_output_path()
+    if features_path:
+        trainer = FeatureTrainer(
+            features_path=features_path,
+            pipeline_builder=pipeline_builder,
+            strategy=strategy,
+            artifacts=artifacts,
+            output_path=output_path,
+        )
+    else:
+        data_path = Path("data") if demo_data else None
+        etl = StatsBombETL(data_path=data_path)
+        features = FeatureBuilder()
+        trainer = StatsBombTrainer(
+            etl=etl,
+            features=features,
+            pipeline_builder=pipeline_builder,
+            strategy=strategy,
+            artifacts=artifacts,
+            output_path=output_path,
+        )
     predictor = Predictor(artifacts=artifacts)
     return ModelFacade(trainer=trainer, predictor=predictor)
 
@@ -73,6 +90,7 @@ def _cmd_train(args: argparse.Namespace) -> None:
         demo_data=args.demo,
         strategy_name=args.strategy,
         n_clusters=args.n_clusters,
+        features_path=Path(args.features_path) if args.features_path else None,
     )
     facade.train()
 
@@ -83,6 +101,7 @@ def _cmd_predict(args: argparse.Namespace) -> None:
         demo_data=False,
         strategy_name="kmeans",
         n_clusters=3,
+        features_path=None,
     )
     payload = json.loads(Path(args.input_json).read_text())
     rows = payload["rows"]
@@ -152,14 +171,24 @@ def build_parser() -> argparse.ArgumentParser:
     etl.set_defaults(func=_cmd_etl)
 
     train = sub.add_parser("train", help="Train and persist the model artifact")
-    train.add_argument("--artifact-path", default="artifacts/model.joblib")
+    train.add_argument(
+        "--artifact-path",
+        default=str(default_model_artifact_path()),
+    )
     train.add_argument("--demo", action="store_true", help="Use demo data")
     train.add_argument("--strategy", default="kmeans", choices=["kmeans"])
     train.add_argument("--n-clusters", type=int, default=3)
+    train.add_argument(
+        "--features-path",
+        help="Path to features.json (lines=True) to train without running ETL",
+    )
     train.set_defaults(func=_cmd_train)
 
     predict = sub.add_parser("predict", help="Predict using a saved artifact")
-    predict.add_argument("--artifact-path", default="artifacts/model.joblib")
+    predict.add_argument(
+        "--artifact-path",
+        default=str(default_model_artifact_path()),
+    )
     predict.add_argument("--input-json", required=True)
     predict.add_argument("--output-json")
     predict.set_defaults(func=_cmd_predict)

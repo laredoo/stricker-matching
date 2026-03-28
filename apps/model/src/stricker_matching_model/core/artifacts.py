@@ -12,6 +12,18 @@ from typing import Any
 import joblib
 
 
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[5]
+
+
+def default_model_artifact_path() -> Path:
+    return _repo_root() / "data" / "artifacts" / "model.joblib"
+
+
+def default_model_output_path() -> Path:
+    return _repo_root() / "data" / "model_output.json"
+
+
 class ArtifactStore:
     def __init__(self, path: Path) -> None:
         self.path = path

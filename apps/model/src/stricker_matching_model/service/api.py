@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 from functools import lru_cache
-from pathlib import Path
 from typing import List
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-from stricker_matching_model.core.artifacts import ArtifactStore
+from stricker_matching_model.core.artifacts import (
+    ArtifactStore,
+    default_model_artifact_path,
+)
 from stricker_matching_model.inference.predictor import Predictor
 
 app = FastAPI(title="Stricker Model Service")
@@ -25,7 +27,7 @@ class PredictResponse(BaseModel):
 
 @lru_cache
 def _predictor() -> Predictor:
-    artifact_path = Path("artifacts/model.joblib")
+    artifact_path = default_model_artifact_path()
     return Predictor(artifacts=ArtifactStore(artifact_path))
 
 
