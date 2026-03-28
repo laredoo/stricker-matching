@@ -158,4 +158,6 @@ class FeatureBuilder(FeatureBuilderContext):
 
     def _save_features(self, features: pd.DataFrame, output_path: Path) -> None:
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        features.to_json(output_path, orient="records", lines=True)
+        features.drop(columns=["player_id"], inplace=False).to_json(
+            output_path, orient="records", lines=True
+        )

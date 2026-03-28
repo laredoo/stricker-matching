@@ -215,4 +215,4 @@ __marimo__/
 data/processed/
 data/features/
 data/artifacts/
-data/model_output.json
+data/output/

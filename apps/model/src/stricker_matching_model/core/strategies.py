@@ -19,7 +19,7 @@ class ClusteringStrategy(Protocol):
 
 @dataclass
 class KMeansStrategy:  # ToDo: strategy is not the best patttern for multiple algorithms (e.g. KMeans, HDBSCAN, etc.) but good enough for first release
-    n_clusters: int = 8
+    n_clusters: int = 3
     random_state: int = 42
 
     def build_estimator(self) -> ClusterMixin:

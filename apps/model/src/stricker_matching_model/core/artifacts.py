@@ -21,7 +21,11 @@ def default_model_artifact_path() -> Path:
 
 
 def default_model_output_path() -> Path:
-    return _repo_root() / "data" / "model_output.json"
+    return _repo_root() / "data" / "output" / "model_output.json"
+
+
+def default_cluster_plot_path() -> Path:
+    return _repo_root() / "data" / "output" / "cluster_pca_2d.png"
 
 
 class ArtifactStore:

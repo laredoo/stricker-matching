@@ -9,6 +9,7 @@ from typing import Protocol
 import numpy as np
 import pandas as pd
 
+from stricker_matching_model.base.training_context import TrainingContext
 from stricker_matching_model.core.artifacts import ArtifactStore
 from stricker_matching_model.core.strategies import ClusteringStrategy
 from stricker_matching_model.etl.statsbomb import StatsBombETL
@@ -21,13 +22,14 @@ class BaseTrainer(Protocol):
 
 
 @dataclass
-class StatsBombTrainer:  # ToDo: not the best architecture for multiple providers, but good enough for first release.
+class StatsBombTrainer(
+    TrainingContext
+):  # ToDo: not the best architecture for multiple providers, but good enough for first release.
     etl: StatsBombETL
     features: FeatureBuilder
     pipeline_builder: PipelineBuilder
     strategy: ClusteringStrategy
     artifacts: ArtifactStore
-    output_path: Path
 
     def run(self) -> None:
         raw = self.etl.extract()
@@ -39,26 +41,17 @@ class StatsBombTrainer:  # ToDo: not the best architecture for multiple provider
         pipeline.fit(rows)
         self.artifacts.save(pipeline)
         labels = pipeline.predict(rows)
-        self._save_outputs(labels, None)
-
-    def _save_outputs(self, labels: np.ndarray, player_ids: pd.Series | None) -> None:
-        self.output_path.parent.mkdir(parents=True, exist_ok=True)
-        if player_ids is None:
-            output = pd.DataFrame({"label": labels.astype(int)})
-        else:
-            output = pd.DataFrame(
-                {"player_id": player_ids.astype(int), "label": labels.astype(int)}
-            )
-        output.to_json(self.output_path, orient="records", lines=True)
+        self.save_outputs(labels, None)
+        self.log_metrics(pipeline, rows, labels)
+        self.plot_clusters(pipeline, rows, labels)
 
 
 @dataclass
-class FeatureTrainer:
+class FeatureTrainer(TrainingContext):
     features_path: Path
     pipeline_builder: PipelineBuilder
     strategy: ClusteringStrategy
     artifacts: ArtifactStore
-    output_path: Path
 
     def run(self) -> None:
         features = pd.read_json(self.features_path, lines=True)
@@ -70,14 +63,6 @@ class FeatureTrainer:
         pipeline.fit(rows)
         self.artifacts.save(pipeline)
         labels = pipeline.predict(rows)
-        self._save_outputs(labels, player_ids)
-
-    def _save_outputs(self, labels: np.ndarray, player_ids: pd.Series | None) -> None:
-        self.output_path.parent.mkdir(parents=True, exist_ok=True)
-        if player_ids is None:
-            output = pd.DataFrame({"label": labels.astype(int)})
-        else:
-            output = pd.DataFrame(
-                {"player_id": player_ids.astype(int), "label": labels.astype(int)}
-            )
-        output.to_json(self.output_path, orient="records", lines=True)
+        self.save_outputs(labels, player_ids)
+        self.log_metrics(pipeline, rows, labels)
+        self.plot_clusters(pipeline, rows, labels)

@@ -23,6 +23,10 @@ class FeatureBuilderContext:
 
         self._zone_ids = [1, 2, 3, 4, 5]
         self._pca_columns = [
+            "territorial_shrinkage_area",
+            "involvement_slope_beta1",
+            "delta_x_region_shift",
+            "avg_statsbomb_xg",
             "proport_ball_receipt_zone_1",
             "proport_dribble_zone_1",
             "proport_pressure_zone_1",
