@@ -1,0 +1,117 @@
+[
+    {
+        "position_id": 11,
+        "position_abbreviation": "LDM",
+        "position": "Left Defensive Midfield"
+    },
+    {
+        "position_id": 15,
+        "position_abbreviation": "LCM",
+        "position": "Left Center Midfield"
+    },
+    {
+        "position_id": 4,
+        "position_abbreviation": "CB",
+        "position": "Center Back"
+    },
+    {
+        "position_id": 24,
+        "position_abbreviation": "LCF",
+        "position": "Left Center Forward"
+    },
+    {
+        "position_id": 1,
+        "position_abbreviation": "GK",
+        "position": "Goalkeeper"
+    },
+    {
+        "position_id": 17,
+        "position_abbreviation": "RW",
+        "position": "Right Wing"
+    },
+    {
+        "position_id": 22,
+        "position_abbreviation": "RCF",
+        "position": "Right Center Forward"
+    },
+    {
+        "position_id": 21,
+        "position_abbreviation": "LW",
+        "position": "Left Wing"
+    },
+    {
+        "position_id": 10,
+        "position_abbreviation": "CDM",
+        "position": "Center Defensive Midfield"
+    },
+    {
+        "position_id": 8,
+        "position_abbreviation": "LWB",
+        "position": "Left Wing Back"
+    },
+    {
+        "position_id": 3,
+        "position_abbreviation": "RCB",
+        "position": "Right Center Back"
+    },
+    {
+        "position_id": 9,
+        "position_abbreviation": "RDM",
+        "position": "Right Defensive Midfield"
+    },
+    {
+        "position_id": 13,
+        "position_abbreviation": "RCM",
+        "position": "Right Center Midfield"
+    },
+    {
+        "position_id": 5,
+        "position_abbreviation": "LCB",
+        "position": "Left Center Back"
+    },
+    {
+        "position_id": 23,
+        "position_abbreviation": "CF",
+        "position": "Center Forward"
+    },
+    {
+        "position_id": 7,
+        "position_abbreviation": "RWB",
+        "position": "Right Wing Back"
+    },
+    {
+        "position_id": 16,
+        "position_abbreviation": "LM",
+        "position": "Left Midfield"
+    },
+    {
+        "position_id": 18,
+        "position_abbreviation": "RAM",
+        "position": "Right Attacking Midfield"
+    },
+    {
+        "position_id": 2,
+        "position_abbreviation": "RB",
+        "position": "Right Back"
+    },
+    {
+        "position_id": 12,
+        "position_abbreviation": "RM",
+        "position": "Right Midfield"
+    },
+    {
+        "position_id": 6,
+        "position_abbreviation": "LB",
+        "position": "Left Back"
+    },
+    {
+        "position_id": 20,
+        "position_abbreviation": "LAM",
+        "position": "Left Attacking Midfield"
+    },
+    {
+        "position_id": 19,
+        "position_abbreviation": "CAM",
+        "position": "Center Attacking Midfield"
+    }
+]

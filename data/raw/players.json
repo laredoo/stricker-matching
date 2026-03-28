@@ -1,0 +1,4602 @@
+[
+    {
+        "player_id": 3465,
+        "player_name": "Timothy Evans Fosu-Mensah",
+        "player_nickname": "Timothy Fosu-Mensah",
+        "jersey_number": 24,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 904,
+        "position_id": null
+    },
+    {
+        "player_id": 3500,
+        "player_name": "Granit Xhaka",
+        "player_nickname": null,
+        "jersey_number": 34,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 904,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 8221,
+        "player_name": "Jonathan Tah",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 8403,
+        "player_name": "Nadiem Amiri",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 8667,
+        "player_name": "Luk\u00e1\u0161 Hr\u00e1deck\u00fd",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 77,
+        "country": "Finland",
+        "team_id": 904,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 8804,
+        "player_name": "Jonas Hofmann",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 9195,
+        "player_name": "Robert Andrich",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 10336,
+        "player_name": "Alejandro Grimaldo Garc\u00eda",
+        "player_nickname": "\u00c1lex Grimaldo",
+        "jersey_number": 20,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 904,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 27133,
+        "player_name": "Odilon Kossonou",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 55,
+        "country": "C\u00f4te d'Ivoire",
+        "team_id": 904,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 28239,
+        "player_name": "Adam Hlo\u017eek",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 904,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 28268,
+        "player_name": "Exequiel Alejandro Palacios",
+        "player_nickname": "Exequiel Palacios",
+        "jersey_number": 25,
+        "country_id": 11,
+        "country": "Argentina",
+        "team_id": 904,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 30606,
+        "player_name": "Edmond Fay\u00e7al Tapsoba",
+        "player_nickname": null,
+        "jersey_number": 12,
+        "country_id": 36,
+        "country": "Burkina Faso",
+        "team_id": 904,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 32289,
+        "player_name": "Victor Okoh Boniface",
+        "player_nickname": "Victor Boniface",
+        "jersey_number": 22,
+        "country_id": 166,
+        "country": "Nigeria",
+        "team_id": 904,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 32712,
+        "player_name": "Jeremie Frimpong",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 904,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 40724,
+        "player_name": "Florian Wirtz",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 46046,
+        "player_name": "Mat\u011bj Kov\u00e1\u0159",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 904,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 114833,
+        "player_name": "Noah Mbamba",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 904,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 196651,
+        "player_name": "Arthur Augusto de Matos Soares",
+        "player_nickname": null,
+        "jersey_number": 13,
+        "country_id": 31,
+        "country": "Brazil",
+        "team_id": 904,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 261630,
+        "player_name": "Gustavo Adolfo Puerta Molano",
+        "player_nickname": null,
+        "jersey_number": 32,
+        "country_id": 49,
+        "country": "Colombia",
+        "team_id": 904,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 394479,
+        "player_name": "Reno M\u00fcnz",
+        "player_nickname": null,
+        "jersey_number": 48,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": null
+    },
+    {
+        "player_id": 5536,
+        "player_name": "Yussuf Yurary Poulsen",
+        "player_nickname": "Yussuf Poulsen",
+        "jersey_number": 9,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 182,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 5557,
+        "player_name": "Timo Werner",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 182,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 5625,
+        "player_name": "Emil Peter Forsberg",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 220,
+        "country": "Sweden",
+        "team_id": 182,
+        "position_id": 18.0
+    },
+    {
+        "player_id": 8211,
+        "player_name": "Benjamin Henrichs",
+        "player_nickname": null,
+        "jersey_number": 39,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 182,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 8222,
+        "player_name": "Kevin Kampl",
+        "player_nickname": null,
+        "jersey_number": 44,
+        "country_id": 208,
+        "country": "Slovenia",
+        "team_id": 182,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 8507,
+        "player_name": "Lukas Klostermann",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 182,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 8509,
+        "player_name": "Willi Orban",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 103,
+        "country": "Hungary",
+        "team_id": 182,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8769,
+        "player_name": "Xaver Schlager",
+        "player_nickname": null,
+        "jersey_number": 24,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 182,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 9237,
+        "player_name": "Leopold Zingerle",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 182,
+        "position_id": null
+    },
+    {
+        "player_id": 12034,
+        "player_name": "David Raum",
+        "player_nickname": null,
+        "jersey_number": 22,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 182,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 15155,
+        "player_name": "Janis Blaswich",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 182,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 16275,
+        "player_name": "Ikoma Lo\u00efs Openda",
+        "player_nickname": "Lo\u00efs Openda",
+        "jersey_number": 17,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 182,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 16532,
+        "player_name": "Daniel Olmo Carvajal",
+        "player_nickname": "Daniel Olmo",
+        "jersey_number": 7,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 182,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 24977,
+        "player_name": "Christoph Baumgartner",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 182,
+        "position_id": 20.0
+    },
+    {
+        "player_id": 30360,
+        "player_name": "Mohamed Simakan",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 182,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 39167,
+        "player_name": "Xavi Simons",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 182,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 39179,
+        "player_name": "Hugo Novoa Ramos",
+        "player_nickname": "Hugo Novoa",
+        "jersey_number": 38,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 182,
+        "position_id": null
+    },
+    {
+        "player_id": 39460,
+        "player_name": "Nicolas Seiwald",
+        "player_nickname": null,
+        "jersey_number": 13,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 182,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 40185,
+        "player_name": "Junior Castello Lukeba",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 182,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 74659,
+        "player_name": "Fabio Carvalho",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 183,
+        "country": "Portugal",
+        "team_id": 182,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 3230,
+        "player_name": "Alassane Pl\u00e9a",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 185,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 7198,
+        "player_name": "Franck Honorat",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 185,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 8068,
+        "player_name": "Maximilian W\u00f6ber",
+        "player_nickname": null,
+        "jersey_number": 39,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 185,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8813,
+        "player_name": "Patrick Herrmann",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": null
+    },
+    {
+        "player_id": 8816,
+        "player_name": "Julian Weigl",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 9174,
+        "player_name": "Marvin Friedrich",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 11399,
+        "player_name": "Robin Hack",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 12320,
+        "player_name": "Tony Jantschke",
+        "player_nickname": null,
+        "jersey_number": 24,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": null
+    },
+    {
+        "player_id": 12323,
+        "player_name": "Florian Neuhaus",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 25039,
+        "player_name": "Nathan Ngoumou Minpole",
+        "player_nickname": "Nathan N'Goumou Minpole",
+        "jersey_number": 19,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 185,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 29003,
+        "player_name": "Jonas Omlin",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 185,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 29595,
+        "player_name": "Ko Itakura",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 185,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 36811,
+        "player_name": "Moritz Nicolas",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 36830,
+        "player_name": "Joseph Scally",
+        "player_nickname": "Joe Scally",
+        "jersey_number": 29,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 185,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 45567,
+        "player_name": "Tom\u00e1\u0161 \u010cvan\u010dara",
+        "player_nickname": null,
+        "jersey_number": 31,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 185,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 48396,
+        "player_name": "Rocco Reitz",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 135777,
+        "player_name": "Yvandro Borges Sanches",
+        "player_nickname": null,
+        "jersey_number": 38,
+        "country_id": 133,
+        "country": "Luxembourg",
+        "team_id": 185,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 158626,
+        "player_name": "Fabio Cristian Chiarodia",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 112,
+        "country": "Italy",
+        "team_id": 185,
+        "position_id": null
+    },
+    {
+        "player_id": 343893,
+        "player_name": "Grant-Leon Ranos",
+        "player_nickname": null,
+        "jersey_number": 28,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 369243,
+        "player_name": "Lukas Ullrich",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 49337,
+        "player_name": "Josip Stani\u0161i\u0107",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 904,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 41411,
+        "player_name": "Nathan Tella",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 68,
+        "country": "England",
+        "team_id": 904,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 8606,
+        "player_name": "Emir Karic",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 872,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 8919,
+        "player_name": "Marcel Schuhen",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 9209,
+        "player_name": "Tim Skarke",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 9219,
+        "player_name": "Tobias Kempe",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 9222,
+        "player_name": "Fabian Holland",
+        "player_nickname": null,
+        "jersey_number": 32,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 9225,
+        "player_name": "Marvin Mehlem",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 9247,
+        "player_name": "Fabian Schnellhardt",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": null
+    },
+    {
+        "player_id": 9893,
+        "player_name": "Klaus Gjasula",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 3,
+        "country": "Albania",
+        "team_id": 872,
+        "position_id": null
+    },
+    {
+        "player_id": 11814,
+        "player_name": "Christoph Zimmermann",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 15797,
+        "player_name": "Matthias Bader",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 15869,
+        "player_name": "Thomas Poppler Isherwood",
+        "player_nickname": "Thomas Isherwood",
+        "jersey_number": 3,
+        "country_id": 220,
+        "country": "Sweden",
+        "team_id": 872,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 30742,
+        "player_name": "Fabian N\u00fcrnberger",
+        "player_nickname": null,
+        "jersey_number": 15,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 34612,
+        "player_name": "Filip Stojilkovi\u0107",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 872,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 35578,
+        "player_name": "Christoph Klarer",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 872,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 39160,
+        "player_name": "Bartol Franji\u0107",
+        "player_nickname": null,
+        "jersey_number": 28,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 872,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 42543,
+        "player_name": "Oscar Vilhelmsson",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 220,
+        "country": "Sweden",
+        "team_id": 872,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 48655,
+        "player_name": "Luca Pfeiffer",
+        "player_nickname": null,
+        "jersey_number": 24,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 48808,
+        "player_name": "Morten Jens Behrens",
+        "player_nickname": "Morten Behrens",
+        "jersey_number": 13,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": null
+    },
+    {
+        "player_id": 131041,
+        "player_name": "Clemens Riedel",
+        "player_nickname": null,
+        "jersey_number": 38,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": null
+    },
+    {
+        "player_id": 153361,
+        "player_name": "Matej Maglica",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 872,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 3053,
+        "player_name": "Leroy San\u00e9",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 3499,
+        "player_name": "Jean-Eric Maxim Choupo-Moting",
+        "player_nickname": "Eric Maxim Choupo-Moting",
+        "jersey_number": 13,
+        "country_id": 39,
+        "country": "Cameroon",
+        "team_id": 169,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 4351,
+        "player_name": "Bouna Sarr",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 202,
+        "country": "Senegal",
+        "team_id": 169,
+        "position_id": null
+    },
+    {
+        "player_id": 5562,
+        "player_name": "Thomas M\u00fcller",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 5579,
+        "player_name": "Joshua Kimmich",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 6324,
+        "player_name": "Leon Goretzka",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 8069,
+        "player_name": "Matthijs de Ligt",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 169,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 8208,
+        "player_name": "Sven Ulreich",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 8400,
+        "player_name": "Serge Gnabry",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 8506,
+        "player_name": "Konrad Laimer",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 169,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 8519,
+        "player_name": "Dayotchanculle Upamecano",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 169,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 10955,
+        "player_name": "Harry Kane",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 68,
+        "country": "England",
+        "team_id": 169,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 12365,
+        "player_name": "Alphonso Davies",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 40,
+        "country": "Canada",
+        "team_id": 169,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 15890,
+        "player_name": "Noussair Mazraoui",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 154,
+        "country": "Morocco",
+        "team_id": 169,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 39565,
+        "player_name": "Jamal Musiala",
+        "player_nickname": null,
+        "jersey_number": 42,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 43565,
+        "player_name": "Min Jae Kim",
+        "player_nickname": "Min Jae Kim",
+        "jersey_number": 3,
+        "country_id": 121,
+        "country": "Korea\u00a0(South)",
+        "team_id": 169,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 44737,
+        "player_name": "Mathys Tel",
+        "player_nickname": null,
+        "jersey_number": 39,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 169,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 50975,
+        "player_name": "Daniel Peretz",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 111,
+        "country": "Israel",
+        "team_id": 169,
+        "position_id": null
+    },
+    {
+        "player_id": 129358,
+        "player_name": "Taichi Fukui",
+        "player_nickname": null,
+        "jersey_number": 46,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 169,
+        "position_id": null
+    },
+    {
+        "player_id": 140571,
+        "player_name": "Frans Kr\u00e4tzig",
+        "player_nickname": null,
+        "jersey_number": 41,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": null
+    },
+    {
+        "player_id": 12075,
+        "player_name": "Niklas Lomb",
+        "player_nickname": null,
+        "jersey_number": 36,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": null
+    },
+    {
+        "player_id": 33401,
+        "player_name": "Amine Adli",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 154,
+        "country": "Morocco",
+        "team_id": 904,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 38004,
+        "player_name": "Piero Mart\u00edn Hincapi\u00e9 Reyna",
+        "player_nickname": "Piero Hincapi\u00e9",
+        "jersey_number": 3,
+        "country_id": 65,
+        "country": "Ecuador",
+        "team_id": 904,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 9109,
+        "player_name": "Jonas F\u00f6hrenbach",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 9201,
+        "player_name": "Nikola Dovedan",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 201,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 9203,
+        "player_name": "Norman Theuerkauf",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 9205,
+        "player_name": "Kevin M\u00fcller",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 10303,
+        "player_name": "Patrick Mainka",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 11382,
+        "player_name": "Tim Kleindienst",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 15693,
+        "player_name": "Denis Thomalla",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 17082,
+        "player_name": "Vitus Eicher",
+        "player_nickname": null,
+        "jersey_number": 22,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": null
+    },
+    {
+        "player_id": 24947,
+        "player_name": "Kevin Sessa",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 30394,
+        "player_name": "Stefan Schimmer",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": null
+    },
+    {
+        "player_id": 31310,
+        "player_name": "Jan-Niklas Beste",
+        "player_nickname": null,
+        "jersey_number": 37,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 31744,
+        "player_name": "Adrian Beck",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 42521,
+        "player_name": "Thomas Leon Keller",
+        "player_nickname": "Thomas Keller",
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": null
+    },
+    {
+        "player_id": 46430,
+        "player_name": "Tim Siersleben",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 48860,
+        "player_name": "Florian Pick",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 48863,
+        "player_name": "Jan Sch\u00f6ppner",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 48959,
+        "player_name": "Omar Haktab Traor\u00e8",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 67007,
+        "player_name": "Eren Sami Dink\u00e7i",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 74089,
+        "player_name": "Marvin Pieringer",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 133483,
+        "player_name": "Lennard Maloney",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 201,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 3913,
+        "player_name": "Edimilson Fernandes",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 177,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 4381,
+        "player_name": "Anwar El Ghazi",
+        "player_nickname": null,
+        "jersey_number": 34,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 177,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 5623,
+        "player_name": "Jae-Sung Lee",
+        "player_nickname": "Lee Jae-Sung",
+        "jersey_number": 7,
+        "country_id": 121,
+        "country": "Korea\u00a0(South)",
+        "team_id": 177,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 7208,
+        "player_name": "Ludovic Ajorque",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 177,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 8207,
+        "player_name": "Dominik Kohr",
+        "player_nickname": null,
+        "jersey_number": 31,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 8230,
+        "player_name": "Josuha Guilavogui",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 177,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 8559,
+        "player_name": "Stefan Bell",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 8676,
+        "player_name": "Danny Vieira da Costa",
+        "player_nickname": "Danny da Costa",
+        "jersey_number": 21,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 10480,
+        "player_name": "Anthony Caci",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 177,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 11278,
+        "player_name": "Karim Onisiwo",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 177,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 11818,
+        "player_name": "Aymen Barkok",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 154,
+        "country": "Morocco",
+        "team_id": 177,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 11819,
+        "player_name": "Marco Richter",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 15458,
+        "player_name": "Sepp van den Berg",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 177,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 19405,
+        "player_name": "Robin Zentner",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 23402,
+        "player_name": "Leandro Barreiro Martins",
+        "player_nickname": "Leandro Barreiro",
+        "jersey_number": 8,
+        "country_id": 133,
+        "country": "Luxembourg",
+        "team_id": 177,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 38917,
+        "player_name": "Tom Krau\u00df",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 48626,
+        "player_name": "Daniel Batz",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": null
+    },
+    {
+        "player_id": 61314,
+        "player_name": "Matondo-Merveille Papela",
+        "player_nickname": null,
+        "jersey_number": 24,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": null
+    },
+    {
+        "player_id": 363583,
+        "player_name": "Brajan Gruda",
+        "player_nickname": null,
+        "jersey_number": 43,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 7095,
+        "player_name": "Marvin Schw\u00e4be",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 8352,
+        "player_name": "Julian Chabot",
+        "player_nickname": null,
+        "jersey_number": 24,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8406,
+        "player_name": "Florian Kainz",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 186,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 8623,
+        "player_name": "Dejan Ljubicic",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 186,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 8828,
+        "player_name": "Dominique Heintz",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": null
+    },
+    {
+        "player_id": 9105,
+        "player_name": "Philipp Pentke",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": null
+    },
+    {
+        "player_id": 9125,
+        "player_name": "Sargis Adamyan",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 12,
+        "country": "Armenia",
+        "team_id": 186,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 10016,
+        "player_name": "Leart Paqarada",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 122,
+        "country": "Kosovo",
+        "team_id": 186,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 11279,
+        "player_name": "Davie Selke",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 18405,
+        "player_name": "Dimitris Limnios",
+        "player_nickname": "Dimitrios Limnios",
+        "jersey_number": 19,
+        "country_id": 88,
+        "country": "Greece",
+        "team_id": 186,
+        "position_id": null
+    },
+    {
+        "player_id": 29682,
+        "player_name": "Rasmus Carstensen",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 186,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 32253,
+        "player_name": "Luca Jannis Kilian",
+        "player_nickname": "Luca Kilian",
+        "jersey_number": 15,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 35637,
+        "player_name": "Timo H\u00fcbers",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 38991,
+        "player_name": "Eric Martel",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 55787,
+        "player_name": "Mathias Flaga Olesen",
+        "player_nickname": null,
+        "jersey_number": 47,
+        "country_id": 133,
+        "country": "Luxembourg",
+        "team_id": 186,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 72768,
+        "player_name": "Steffen Tigges",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 134880,
+        "player_name": "Faride Alidou",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 300704,
+        "player_name": "Denis Huseinba\u0161i\u0107",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 28,
+        "country": "Bosnia and Herzegovina",
+        "team_id": 186,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 382352,
+        "player_name": "Damion Lamar Downs",
+        "player_nickname": "Damion Downs",
+        "jersey_number": 42,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 405983,
+        "player_name": "Max Finkgr\u00e4fe",
+        "player_nickname": null,
+        "jersey_number": 35,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 7044,
+        "player_name": "Patrik Schick",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 904,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 4476,
+        "player_name": "Nicolas Louis Marcel Cozza",
+        "player_nickname": "Nicolas Cozza",
+        "jersey_number": 8,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 179,
+        "position_id": null
+    },
+    {
+        "player_id": 8231,
+        "player_name": "Yannick Gerhardt",
+        "player_nickname": null,
+        "jersey_number": 31,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 179,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 8235,
+        "player_name": "Maximilian Arnold",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 179,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 12630,
+        "player_name": "Ridle Bote Baku",
+        "player_nickname": "Bote Baku",
+        "jersey_number": 20,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 179,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 13309,
+        "player_name": "Pavao Pervan",
+        "player_nickname": null,
+        "jersey_number": 12,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 179,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 15879,
+        "player_name": "Mattias Svanberg",
+        "player_nickname": null,
+        "jersey_number": 32,
+        "country_id": 220,
+        "country": "Sweden",
+        "team_id": 179,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 16554,
+        "player_name": "Joakim M\u00e6hle",
+        "player_nickname": "Joakim Maehle",
+        "jersey_number": 21,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 179,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 20814,
+        "player_name": "Sebastiaan Bornauw",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 179,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 21261,
+        "player_name": "Jonas Older Wind",
+        "player_nickname": "Jonas Wind",
+        "jersey_number": 23,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 179,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 22314,
+        "player_name": "Maxence Lacroix",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 179,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 28914,
+        "player_name": "Lovro Majer",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 179,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 29353,
+        "player_name": "C\u00e9dric Zesiger",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 179,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 31955,
+        "player_name": "Jakub Kami\u0144ski",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 182,
+        "country": "Poland",
+        "team_id": 179,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 33297,
+        "player_name": "Patrick Wimmer",
+        "player_nickname": null,
+        "jersey_number": 39,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 179,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 38009,
+        "player_name": "Kevin Paredes",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 179,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 41783,
+        "player_name": "Tiago Barreiros de Melo Tom\u00e1s",
+        "player_nickname": "Tiago Tom\u00e1s",
+        "jersey_number": 11,
+        "country_id": 183,
+        "country": "Portugal",
+        "team_id": 179,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 42754,
+        "player_name": "Amin Sarr",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 220,
+        "country": "Sweden",
+        "team_id": 179,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 48500,
+        "player_name": "Moritz Jenz",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 179,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 140488,
+        "player_name": "Philipp Schulze",
+        "player_nickname": null,
+        "jersey_number": 35,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 179,
+        "position_id": null
+    },
+    {
+        "player_id": 254714,
+        "player_name": "D\u017eenan Pej\u010dinovi\u0107",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 179,
+        "position_id": null
+    },
+    {
+        "player_id": 8309,
+        "player_name": "Michael Gregoritsch",
+        "player_nickname": null,
+        "jersey_number": 38,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 183,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 8361,
+        "player_name": "Ritsu Doan",
+        "player_nickname": null,
+        "jersey_number": 42,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 183,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 8401,
+        "player_name": "Maximilian Eggestein",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 8808,
+        "player_name": "Matthias Ginter",
+        "player_nickname": null,
+        "jersey_number": 28,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 8931,
+        "player_name": "Philipp Lienhart",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 183,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8939,
+        "player_name": "Nicolas H\u00f6fler",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 11282,
+        "player_name": "Vincenzo Grifo",
+        "player_nickname": null,
+        "jersey_number": 32,
+        "country_id": 112,
+        "country": "Italy",
+        "team_id": 183,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 11459,
+        "player_name": "Lukas K\u00fcbler",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 12418,
+        "player_name": "Lucas H\u00f6ler",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 12422,
+        "player_name": "Manuel Gulde",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 12631,
+        "player_name": "Florian M\u00fcller",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": null
+    },
+    {
+        "player_id": 39126,
+        "player_name": "Junior Chukwubuike Adamu",
+        "player_nickname": "Chukwubuike Adamu",
+        "jersey_number": 20,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 183,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 48229,
+        "player_name": "Tan-Kenneth Jerico Leka-Schmidt",
+        "player_nickname": "Kenneth Schmidt",
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": null
+    },
+    {
+        "player_id": 48240,
+        "player_name": "Merlin R\u00f6hl",
+        "player_nickname": null,
+        "jersey_number": 34,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 48246,
+        "player_name": "Noah Atubolu",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 48341,
+        "player_name": "Fabian R\u00fcdlin",
+        "player_nickname": null,
+        "jersey_number": 35,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": null
+    },
+    {
+        "player_id": 79429,
+        "player_name": "Kiliann Sildillia",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 183,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 131560,
+        "player_name": "Jordy Makengo Basambundu",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 183,
+        "position_id": null
+    },
+    {
+        "player_id": 133161,
+        "player_name": "Noah Wei\u00dfhaupt",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 5460,
+        "player_name": "Andrej Kramari\u0107",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 175,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 7829,
+        "player_name": "Wout Weghorst",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 175,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 8393,
+        "player_name": "Oliver Baumann",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 8397,
+        "player_name": "Kevin Vogt",
+        "player_nickname": null,
+        "jersey_number": 22,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 8759,
+        "player_name": "Diadie Samassekou",
+        "player_nickname": "Diadi\u00e9 Samass\u00e9kou",
+        "jersey_number": 18,
+        "country_id": 140,
+        "country": "Mali",
+        "team_id": 175,
+        "position_id": null
+    },
+    {
+        "player_id": 8962,
+        "player_name": "Ihlas Bebou",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 228,
+        "country": "Togo",
+        "team_id": 175,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 9133,
+        "player_name": "Marius B\u00fclter",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 9159,
+        "player_name": "Grischa Pr\u00f6mel",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 12088,
+        "player_name": "M\u00ebrgim Berisha",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 12327,
+        "player_name": "John Anthony Brooks",
+        "player_nickname": "John Brooks",
+        "jersey_number": 23,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 175,
+        "position_id": null
+    },
+    {
+        "player_id": 13292,
+        "player_name": "Kevin Akpoguma",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 166,
+        "country": "Nigeria",
+        "team_id": 175,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 16294,
+        "player_name": "Robert Skov",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 175,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 20770,
+        "player_name": "Ozan Muhammed Kabak",
+        "player_nickname": "Ozan Kabak",
+        "jersey_number": 5,
+        "country_id": 233,
+        "country": "Turkey",
+        "team_id": 175,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 24845,
+        "player_name": "Finn Ole Becker",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 35242,
+        "player_name": "Maximilian Beier",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 46376,
+        "player_name": "Attila Szalai",
+        "player_nickname": null,
+        "jersey_number": 41,
+        "country_id": 103,
+        "country": "Hungary",
+        "team_id": 175,
+        "position_id": null
+    },
+    {
+        "player_id": 48644,
+        "player_name": "Anton Stach",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 51158,
+        "player_name": "Luca Philipp",
+        "player_nickname": null,
+        "jersey_number": 37,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": null
+    },
+    {
+        "player_id": 201413,
+        "player_name": "Bambas\u00e9 Cont\u00e9",
+        "player_nickname": null,
+        "jersey_number": 31,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 251293,
+        "player_name": "Umut Tohumcu",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 3117,
+        "player_name": "Lucas Tousart",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 190,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 3676,
+        "player_name": "J\u00e9r\u00f4me Roussillon",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 190,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 6985,
+        "player_name": "Robin Gosens",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 7173,
+        "player_name": "Leonardo Bonucci",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 112,
+        "country": "Italy",
+        "team_id": 190,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 8239,
+        "player_name": "Robin Knoche",
+        "player_nickname": null,
+        "jersey_number": 31,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 8375,
+        "player_name": "Sheraldo Becker",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 217,
+        "country": "Suriname",
+        "team_id": 190,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 8938,
+        "player_name": "Janik Haberer",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 9164,
+        "player_name": "Christopher Trimmel",
+        "player_nickname": null,
+        "jersey_number": 28,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 190,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 10014,
+        "player_name": "Kevin Behrens",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 11175,
+        "player_name": "Diogo Filipe Monteiro Pinto Leite",
+        "player_nickname": "Diogo Leite",
+        "jersey_number": 4,
+        "country_id": 183,
+        "country": "Portugal",
+        "team_id": 190,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 12420,
+        "player_name": "Frederik R\u00f8nnow",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 190,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 20606,
+        "player_name": "Paul Jaeckel",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 23452,
+        "player_name": "Alex Kr\u00e1l",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 190,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 24243,
+        "player_name": "Brenden Aaronson",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 190,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 29163,
+        "player_name": "Josip Juranovi\u0107",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 190,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 41648,
+        "player_name": "Jakob Busk Jensen",
+        "player_nickname": "Jakob Busk",
+        "jersey_number": 12,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 190,
+        "position_id": null
+    },
+    {
+        "player_id": 44955,
+        "player_name": "A\u00efssa Bilal La\u00efdouni",
+        "player_nickname": "A\u00efssa La\u00efdouni",
+        "jersey_number": 20,
+        "country_id": 232,
+        "country": "Tunisia",
+        "team_id": 190,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 48543,
+        "player_name": "Benedict Hollerbach",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 89326,
+        "player_name": "David Datro Fofana",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 55,
+        "country": "C\u00f4te d'Ivoire",
+        "team_id": 190,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 313937,
+        "player_name": "Aljoscha Kemlein",
+        "player_nickname": null,
+        "jersey_number": 36,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": null
+    },
+    {
+        "player_id": 5666,
+        "player_name": "Dawid Kownacki",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 182,
+        "country": "Poland",
+        "team_id": 176,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 6321,
+        "player_name": "Milos Veljkovic",
+        "player_nickname": null,
+        "jersey_number": 13,
+        "country_id": 203,
+        "country": "Serbia",
+        "team_id": 176,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 7083,
+        "player_name": "Anthony Jung",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8399,
+        "player_name": "Ji\u0159\u00ed Pavlenka",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 176,
+        "position_id": null
+    },
+    {
+        "player_id": 8570,
+        "player_name": "Niklas Stark",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8576,
+        "player_name": "Mitchell Weiser",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 8784,
+        "player_name": "Romano Schmid",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 176,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 8826,
+        "player_name": "Leonardo Bittencourt",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 12299,
+        "player_name": "Marvin Ducksch",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 15854,
+        "player_name": "Marco Friedl",
+        "player_nickname": null,
+        "jersey_number": 32,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 176,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 21865,
+        "player_name": "Senne Lynen",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 176,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 23198,
+        "player_name": "Michael Zetterer",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 23384,
+        "player_name": "Amos Pieper",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": null
+    },
+    {
+        "player_id": 24179,
+        "player_name": "Olivier Deman",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 176,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 24532,
+        "player_name": "Jens Stage",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 176,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 28266,
+        "player_name": "Rafael Santos Borr\u00e9 Amaury",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 49,
+        "country": "Colombia",
+        "team_id": 176,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 28573,
+        "player_name": "Felix Agu",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 31100,
+        "player_name": "Christian Gro\u00df",
+        "player_nickname": null,
+        "jersey_number": 36,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 34870,
+        "player_name": "Nick Woltemade",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 185015,
+        "player_name": "Justin Gideon Njinmah",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 3176,
+        "player_name": "Thomas Meunier",
+        "player_nickname": null,
+        "jersey_number": 24,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 180,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 3493,
+        "player_name": "Emre Can",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 5555,
+        "player_name": "Julian Brandt",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 5559,
+        "player_name": "Marco Reus",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 5572,
+        "player_name": "Mats Hummels",
+        "player_nickname": null,
+        "jersey_number": 15,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 8518,
+        "player_name": "Marcel Sabitzer",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 180,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 8546,
+        "player_name": "Niclas F\u00fcllkrug",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 8673,
+        "player_name": "S\u00e9bastien Haller",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 55,
+        "country": "C\u00f4te d'Ivoire",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 9410,
+        "player_name": "Marius Wolf",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 12387,
+        "player_name": "Julian Ryerson",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 171,
+        "country": "Norway",
+        "team_id": 180,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 15582,
+        "player_name": "Donyell Malen",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 17974,
+        "player_name": "Gregor Kobel",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 180,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 24118,
+        "player_name": "Nico Schlotterbeck",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 28768,
+        "player_name": "Alexander Meyer",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 34339,
+        "player_name": "Giovanni Reyna",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 35609,
+        "player_name": "Karim-David Adeyemi",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 36728,
+        "player_name": "Mateu Jaume Morey Bauz\u00e0",
+        "player_nickname": "Mate Morey",
+        "jersey_number": 2,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 38837,
+        "player_name": "Youssoufa Moukoko",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 48820,
+        "player_name": "Antonios Papadopoulos",
+        "player_nickname": null,
+        "jersey_number": 47,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 161995,
+        "player_name": "Jamie Jermaine Bynoe-Gittens",
+        "player_nickname": null,
+        "jersey_number": 43,
+        "country_id": 68,
+        "country": "England",
+        "team_id": 180,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 5697,
+        "player_name": "Genki Haraguchi",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 174,
+        "position_id": null
+    },
+    {
+        "player_id": 8226,
+        "player_name": "Dan-Axel Zagadou",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 174,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 8538,
+        "player_name": "Waldemar Anton",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 8934,
+        "player_name": "Pascal Stenzel",
+        "player_nickname": null,
+        "jersey_number": 15,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 9102,
+        "player_name": "Serhou Guirassy",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 95,
+        "country": "Guinea",
+        "team_id": 174,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 10012,
+        "player_name": "Josha Mamadou Karaboue Vagnoman",
+        "player_nickname": "Josha Vagnoman",
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 12407,
+        "player_name": "Maximilian Mittelst\u00e4dt",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 12413,
+        "player_name": "Fabian Bredlow",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": null
+    },
+    {
+        "player_id": 13329,
+        "player_name": "Silas Katompa Mvumpa",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 52,
+        "country": "Congo, (Kinshasa)",
+        "team_id": 174,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 20662,
+        "player_name": "Alexander N\u00fcbel",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 20947,
+        "player_name": "Atakan Karazor",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 22067,
+        "player_name": "Woo-Yeong Jeong",
+        "player_nickname": "Jeong Woo-Yeong",
+        "jersey_number": 10,
+        "country_id": 121,
+        "country": "Korea\u00a0(South)",
+        "team_id": 174,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 23614,
+        "player_name": "Chris F\u00fchrich",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 28805,
+        "player_name": "Jamie Leweling",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 29227,
+        "player_name": "Leonidas Stergiou",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 174,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 39360,
+        "player_name": "Angelo Stiller",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 45115,
+        "player_name": "Enzo Millot",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 174,
+        "position_id": 20.0
+    },
+    {
+        "player_id": 47619,
+        "player_name": "Anthony Rouault",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 174,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 131243,
+        "player_name": "Deniz Undav",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 18.0
+    },
+    {
+        "player_id": 253296,
+        "player_name": "Jovan Milo\u0161evi\u0107",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 203,
+        "country": "Serbia",
+        "team_id": 174,
+        "position_id": null
+    },
+    {
+        "player_id": 3767,
+        "player_name": "Ellyes Joris Skhiri",
+        "player_nickname": null,
+        "jersey_number": 15,
+        "country_id": 232,
+        "country": "Tunisia",
+        "team_id": 184,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 4440,
+        "player_name": "Kevin Trapp",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 5681,
+        "player_name": "Makoto Hasebe",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 184,
+        "position_id": null
+    },
+    {
+        "player_id": 8227,
+        "player_name": "Mario G\u00f6tze",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 8319,
+        "player_name": "Philipp Max",
+        "player_nickname": null,
+        "jersey_number": 31,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": null
+    },
+    {
+        "player_id": 13294,
+        "player_name": "Robin Koch",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 23658,
+        "player_name": "Aur\u00e9lio Gabriel Ulineia Buta",
+        "player_nickname": "Aur\u00e9lio Buta",
+        "jersey_number": 24,
+        "country_id": 183,
+        "country": "Portugal",
+        "team_id": 184,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 28346,
+        "player_name": "Eric Junior Dina Ebimbe",
+        "player_nickname": "\u00c9ric Ebimbe",
+        "jersey_number": 26,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 184,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 29925,
+        "player_name": "Jens Petter Hauge",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 171,
+        "country": "Norway",
+        "team_id": 184,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 30047,
+        "player_name": "Hrvoje Smol\u010di\u0107",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 184,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 33088,
+        "player_name": "Lucas Silva Melo",
+        "player_nickname": "Tuta",
+        "jersey_number": 35,
+        "country_id": 31,
+        "country": "Brazil",
+        "team_id": 184,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 37972,
+        "player_name": "Jens Grahl",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": null
+    },
+    {
+        "player_id": 39070,
+        "player_name": "Ansgar Knauff",
+        "player_nickname": null,
+        "jersey_number": 36,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 40707,
+        "player_name": "Jessic Ngankam",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 41593,
+        "player_name": "Willian Joel Pacho Tenorio",
+        "player_nickname": "William Pacho",
+        "jersey_number": 3,
+        "country_id": 65,
+        "country": "Ecuador",
+        "team_id": 184,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 48031,
+        "player_name": "Niels Nkounkou",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 184,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 143728,
+        "player_name": "Hugo Larsson",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 220,
+        "country": "Sweden",
+        "team_id": 184,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 217047,
+        "player_name": "Fares Cha\u00efbi",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 4,
+        "country": "Algeria",
+        "team_id": 184,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 314756,
+        "player_name": "Elias Niklas Baum",
+        "player_nickname": null,
+        "jersey_number": 47,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 184,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 314766,
+        "player_name": "Ignacio Ferri Juli\u00e0",
+        "player_nickname": "Nacho Ferri",
+        "jersey_number": 48,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 184,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 5602,
+        "player_name": "Cristian Gamboa Luna",
+        "player_nickname": "Cristian Gamboa",
+        "jersey_number": 2,
+        "country_id": 54,
+        "country": "Costa Rica",
+        "team_id": 868,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 8906,
+        "player_name": "Philipp F\u00f6rster",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 8924,
+        "player_name": "Maximilian Wittek",
+        "player_nickname": null,
+        "jersey_number": 32,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 8949,
+        "player_name": "Takuma Asano",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 868,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 8960,
+        "player_name": "Bernardo Fernandes da Silva Junior",
+        "player_nickname": "Bernardo",
+        "jersey_number": 5,
+        "country_id": 31,
+        "country": "Brazil",
+        "team_id": 868,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 9088,
+        "player_name": "Danilo Teodoro Soares",
+        "player_nickname": "Danilo Soares",
+        "jersey_number": 3,
+        "country_id": 31,
+        "country": "Brazil",
+        "team_id": 868,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 9089,
+        "player_name": "Anthony Losilla",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 868,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 9095,
+        "player_name": "Manuel Riemann",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 9230,
+        "player_name": "Christopher Antwi-Adjej",
+        "player_nickname": "Christopher Antwi-Adjei",
+        "jersey_number": 22,
+        "country_id": 86,
+        "country": "Ghana",
+        "team_id": 868,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 15546,
+        "player_name": "Mat\u00fa\u0161 Bero",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 207,
+        "country": "Slovakia",
+        "team_id": 868,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 18129,
+        "player_name": "Lukas Daschner",
+        "player_nickname": null,
+        "jersey_number": 13,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 23351,
+        "player_name": "Keven Schlotterbeck",
+        "player_nickname": null,
+        "jersey_number": 31,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 23498,
+        "player_name": "Gon\u00e7alo Mendes Paciencia",
+        "player_nickname": "Gon\u00e7alo Paci\u00eancia",
+        "jersey_number": 9,
+        "country_id": 183,
+        "country": "Portugal",
+        "team_id": 868,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 29760,
+        "player_name": "Erhan Ma\u0161ovi\u0107",
+        "player_nickname": null,
+        "jersey_number": 4,
+        "country_id": 203,
+        "country": "Serbia",
+        "team_id": 868,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 32657,
+        "player_name": "Niclas Thiede",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": null
+    },
+    {
+        "player_id": 48496,
+        "player_name": "Noah Loosli",
+        "player_nickname": null,
+        "jersey_number": 41,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 868,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 72912,
+        "player_name": "Moritz-Broni Kwarteng",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": null
+    },
+    {
+        "player_id": 133208,
+        "player_name": "Patrick Osterhage",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 151463,
+        "player_name": "Moritz Broschinski",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 297024,
+        "player_name": "Tim Oermann",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 3428,
+        "player_name": "Tom\u00e1\u0161 Koubek",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 172,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 4682,
+        "player_name": "Robert Gumny",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 182,
+        "country": "Poland",
+        "team_id": 172,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 6874,
+        "player_name": "Ermedin Demirovi\u0107",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 28,
+        "country": "Bosnia and Herzegovina",
+        "team_id": 172,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 8056,
+        "player_name": "Fredrik Jensen",
+        "player_nickname": null,
+        "jersey_number": 24,
+        "country_id": 77,
+        "country": "Finland",
+        "team_id": 172,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 8245,
+        "player_name": "Felix Uduokhai",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8318,
+        "player_name": "Jeffrey Gouweleeuw",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 172,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 9198,
+        "player_name": "Niklas Dorsch",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 9221,
+        "player_name": "Phillip Tietz",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 9227,
+        "player_name": "Sven Michel",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 12411,
+        "player_name": "Arne Maier",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 16027,
+        "player_name": "Kevin Mbabu",
+        "player_nickname": null,
+        "jersey_number": 43,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 172,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 18119,
+        "player_name": "Elvis Rexhbe\u00e7aj",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 25118,
+        "player_name": "Iago Amaral Borduchi",
+        "player_nickname": "Iago",
+        "jersey_number": 22,
+        "country_id": 31,
+        "country": "Brazil",
+        "team_id": 172,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 27548,
+        "player_name": "Frederik Winther",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 172,
+        "position_id": null
+    },
+    {
+        "player_id": 30401,
+        "player_name": "Ruben Vargas",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 172,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 33173,
+        "player_name": "Patric Pfeiffer",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 86,
+        "country": "Ghana",
+        "team_id": 172,
+        "position_id": null
+    },
+    {
+        "player_id": 37005,
+        "player_name": "Finn Dahmen",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 40167,
+        "player_name": "Arne Engels",
+        "player_nickname": null,
+        "jersey_number": 27,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 172,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 40995,
+        "player_name": "Dion Drena Beljo",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 172,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 51825,
+        "player_name": "Tim Breithaupt",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 335198,
+        "player_name": "Francis-Ikechukwu Onyeka",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": null
+    },
+    {
+        "player_id": 319930,
+        "player_name": "Ken Eghosa Gideon Izekor",
+        "player_nickname": null,
+        "jersey_number": 38,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 904,
+        "position_id": null
+    },
+    {
+        "player_id": 8524,
+        "player_name": "P\u00e9ter Gul\u00e1csi",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 103,
+        "country": "Hungary",
+        "team_id": 182,
+        "position_id": null
+    },
+    {
+        "player_id": 10509,
+        "player_name": "Christopher Lenz",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 182,
+        "position_id": null
+    },
+    {
+        "player_id": 16535,
+        "player_name": "Eljif Elmas",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 135,
+        "country": "Macedonia, Republic of",
+        "team_id": 182,
+        "position_id": 20.0
+    },
+    {
+        "player_id": 38759,
+        "player_name": "Benjamin \u0160e\u0161ko",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 208,
+        "country": "Slovenia",
+        "team_id": 182,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 132019,
+        "player_name": "El Chadaille Bitshiabu",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 182,
+        "position_id": null
+    },
+    {
+        "player_id": 287747,
+        "player_name": "Yannick Fereira Eduardo",
+        "player_nickname": null,
+        "jersey_number": 46,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 182,
+        "position_id": null
+    },
+    {
+        "player_id": 7375,
+        "player_name": "Theoson Jordan Siebatcheu",
+        "player_nickname": "Jordan Siebatcheu",
+        "jersey_number": 13,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 185,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 8779,
+        "player_name": "Stefan Lainer",
+        "player_nickname": null,
+        "jersey_number": 18,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 185,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 8805,
+        "player_name": "Christoph Kramer",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 8814,
+        "player_name": "Nico Elvedi",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 185,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 25040,
+        "player_name": "Kouadio Emmanuel Kon\u00e9",
+        "player_nickname": "Kouadio Kon\u00e9",
+        "jersey_number": 17,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 185,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 40943,
+        "player_name": "Luca Netz",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 320945,
+        "player_name": "Jan Jakob Olschowsky",
+        "player_nickname": null,
+        "jersey_number": 41,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 185,
+        "position_id": null
+    },
+    {
+        "player_id": 394487,
+        "player_name": "Shio Fukuda",
+        "player_nickname": null,
+        "jersey_number": 49,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 185,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 11391,
+        "player_name": "Borja Iglesias Quintas",
+        "player_nickname": "Borja Iglesias",
+        "jersey_number": 9,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 904,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 9250,
+        "player_name": "Jannik M\u00fcller",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": null
+    },
+    {
+        "player_id": 12629,
+        "player_name": "Gerrit Holtmann",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 180,
+        "country": "Philippines",
+        "team_id": 872,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 15862,
+        "player_name": "Alexander Brunst-Z\u00f6llner",
+        "player_nickname": "Alexander Brunst",
+        "jersey_number": 30,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": null
+    },
+    {
+        "player_id": 17925,
+        "player_name": "Sebastian Polter",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 48825,
+        "player_name": "Andreas M\u00fcller",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 872,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 282348,
+        "player_name": "Fabio Torsiello",
+        "player_nickname": null,
+        "jersey_number": 42,
+        "country_id": 112,
+        "country": "Italy",
+        "team_id": 872,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 5209,
+        "player_name": "Rapha\u00ebl Adelino Jos\u00e9 Guerreiro",
+        "player_nickname": "Rapha\u00ebl Guerreiro",
+        "jersey_number": 22,
+        "country_id": 183,
+        "country": "Portugal",
+        "team_id": 169,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 5570,
+        "player_name": "Manuel Neuer",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 10956,
+        "player_name": "Eric Dier",
+        "player_nickname": null,
+        "jersey_number": 15,
+        "country_id": 68,
+        "country": "England",
+        "team_id": 169,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 24946,
+        "player_name": "Sacha Boey",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 39,
+        "country": "Cameroon",
+        "team_id": 169,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 122411,
+        "player_name": "Lovro Zvonarek",
+        "player_nickname": null,
+        "jersey_number": 34,
+        "country_id": 56,
+        "country": "Croatia",
+        "team_id": 169,
+        "position_id": null
+    },
+    {
+        "player_id": 140589,
+        "player_name": "Aleksandar Pavlovi\u0107",
+        "player_nickname": null,
+        "jersey_number": 45,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 169,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 409280,
+        "player_name": "Adam Aznou Ben Cheikh",
+        "player_nickname": "Adam Aznou",
+        "jersey_number": 44,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 169,
+        "position_id": null
+    },
+    {
+        "player_id": 9110,
+        "player_name": "Benedikt Gimber",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 9186,
+        "player_name": "Marnon Busch",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 201,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 7796,
+        "player_name": "Silvan Widmer",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 221,
+        "country": "Switzerland",
+        "team_id": 177,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 13315,
+        "player_name": "Philipp Mwene",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 177,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 200848,
+        "player_name": "Lasse Finn Rie\u00df",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": null
+    },
+    {
+        "player_id": 396425,
+        "player_name": "Maxim Bora Dal",
+        "player_nickname": null,
+        "jersey_number": 34,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": null
+    },
+    {
+        "player_id": 424876,
+        "player_name": "Tim M\u00fcller",
+        "player_nickname": null,
+        "jersey_number": 39,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 177,
+        "position_id": null
+    },
+    {
+        "player_id": 11468,
+        "player_name": "Benno Schmitz",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 9.0
+    },
+    {
+        "player_id": 12318,
+        "player_name": "Linton Maina",
+        "player_nickname": null,
+        "jersey_number": 37,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 16.0
+    },
+    {
+        "player_id": 33335,
+        "player_name": "Jan Thielmann",
+        "player_nickname": null,
+        "jersey_number": 29,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 363595,
+        "player_name": "Justin Diehl",
+        "player_nickname": null,
+        "jersey_number": 45,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 186,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 7116,
+        "player_name": "Rog\u00e9rio Oliveira da Silva",
+        "player_nickname": "Rog\u00e9rio",
+        "jersey_number": 13,
+        "country_id": 31,
+        "country": "Brazil",
+        "team_id": 179,
+        "position_id": null
+    },
+    {
+        "player_id": 8240,
+        "player_name": "Koen Casteels",
+        "player_nickname": null,
+        "jersey_number": 1,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 179,
+        "position_id": 1.0
+    },
+    {
+        "player_id": 29906,
+        "player_name": "Aster Vranckx",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 179,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 48683,
+        "player_name": "Kilian Fischer",
+        "player_nickname": null,
+        "jersey_number": 2,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 179,
+        "position_id": null
+    },
+    {
+        "player_id": 8228,
+        "player_name": "Maximilian Philipp",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 17.0
+    },
+    {
+        "player_id": 8945,
+        "player_name": "Christian G\u00fcnter",
+        "player_nickname": null,
+        "jersey_number": 30,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 18417,
+        "player_name": "Florent Muslija",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 122,
+        "country": "Kosovo",
+        "team_id": 183,
+        "position_id": 21.0
+    },
+    {
+        "player_id": 19316,
+        "player_name": "Roland Sallai",
+        "player_nickname": null,
+        "jersey_number": 22,
+        "country_id": 103,
+        "country": "Hungary",
+        "team_id": 183,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 35713,
+        "player_name": "Yannik Keitel",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 183,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 6405,
+        "player_name": "Stanley Nsoki",
+        "player_nickname": null,
+        "jersey_number": 34,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 175,
+        "position_id": null
+    },
+    {
+        "player_id": 8391,
+        "player_name": "Dennis Geiger",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 9397,
+        "player_name": "Pavel Kade\u0159\u00e1bek",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 175,
+        "position_id": 7.0
+    },
+    {
+        "player_id": 11396,
+        "player_name": "Florian Grillitsch",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 175,
+        "position_id": 4.0
+    },
+    {
+        "player_id": 120800,
+        "player_name": "Nahuel Nicolas Noll",
+        "player_nickname": null,
+        "jersey_number": 36,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": null
+    },
+    {
+        "player_id": 134272,
+        "player_name": "David Jur\u00e1sek",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 60,
+        "country": "Czech Republic",
+        "team_id": 175,
+        "position_id": 8.0
+    },
+    {
+        "player_id": 426425,
+        "player_name": "Tim Drexler",
+        "player_nickname": null,
+        "jersey_number": 35,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 175,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 8933,
+        "player_name": "Alexander Schwolow",
+        "player_nickname": null,
+        "jersey_number": 37,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": null
+    },
+    {
+        "player_id": 9402,
+        "player_name": "Rani Khedira",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 190,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 18789,
+        "player_name": "Danilho Doekhi",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 190,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 23779,
+        "player_name": "Chris Vianney Bedia",
+        "player_nickname": "Chris Bedia",
+        "jersey_number": 11,
+        "country_id": 55,
+        "country": "C\u00f4te d'Ivoire",
+        "team_id": 190,
+        "position_id": null
+    },
+    {
+        "player_id": 24849,
+        "player_name": "Mikkel Kaufmann",
+        "player_nickname": null,
+        "jersey_number": 9,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 190,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 32537,
+        "player_name": "Yorbe Vertessen",
+        "player_nickname": null,
+        "jersey_number": 14,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 190,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 42822,
+        "player_name": "Andr\u00e1s Sch\u00e4fer",
+        "player_nickname": null,
+        "jersey_number": 13,
+        "country_id": 103,
+        "country": "Hungary",
+        "team_id": 190,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 51769,
+        "player_name": "Juli\u00e1n Malatini",
+        "player_nickname": null,
+        "jersey_number": 22,
+        "country_id": 11,
+        "country": "Argentina",
+        "team_id": 176,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 52124,
+        "player_name": "Isak Hansen-Aar\u00f8en",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 171,
+        "country": "Norway",
+        "team_id": 176,
+        "position_id": 13.0
+    },
+    {
+        "player_id": 79990,
+        "player_name": "Eduardo dos Santos Haesler",
+        "player_nickname": null,
+        "jersey_number": 38,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": null
+    },
+    {
+        "player_id": 141009,
+        "player_name": "Cimo Patric R\u00f6cker",
+        "player_nickname": null,
+        "jersey_number": 40,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": null
+    },
+    {
+        "player_id": 374860,
+        "player_name": "Leon Opitz",
+        "player_nickname": null,
+        "jersey_number": 35,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 176,
+        "position_id": null
+    },
+    {
+        "player_id": 374863,
+        "player_name": "Joel Victor Imasuen",
+        "player_nickname": null,
+        "jersey_number": 26,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 176,
+        "position_id": null
+    },
+    {
+        "player_id": 6322,
+        "player_name": "Niklas S\u00fcle",
+        "player_nickname": null,
+        "jersey_number": 25,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 9085,
+        "player_name": "Salih \u00d6zcan",
+        "player_nickname": null,
+        "jersey_number": 6,
+        "country_id": 233,
+        "country": "Turkey",
+        "team_id": 180,
+        "position_id": 15.0
+    },
+    {
+        "player_id": 12423,
+        "player_name": "Jadon Sancho",
+        "player_nickname": null,
+        "jersey_number": 10,
+        "country_id": 68,
+        "country": "England",
+        "team_id": 180,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 39092,
+        "player_name": "Ian Maatsen",
+        "player_nickname": null,
+        "jersey_number": 22,
+        "country_id": 160,
+        "country": "Netherlands",
+        "team_id": 180,
+        "position_id": 6.0
+    },
+    {
+        "player_id": 49665,
+        "player_name": "Felix Kalu Nmecha",
+        "player_nickname": null,
+        "jersey_number": 8,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": 10.0
+    },
+    {
+        "player_id": 256297,
+        "player_name": "Julien Duranville",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 22,
+        "country": "Belgium",
+        "team_id": 180,
+        "position_id": 12.0
+    },
+    {
+        "player_id": 346011,
+        "player_name": "Kjell-Arik W\u00e4tjen",
+        "player_nickname": null,
+        "jersey_number": 38,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 180,
+        "position_id": null
+    },
+    {
+        "player_id": 8238,
+        "player_name": "Mahmoud Dahoud",
+        "player_nickname": null,
+        "jersey_number": 5,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": 11.0
+    },
+    {
+        "player_id": 95272,
+        "player_name": "Hiroki Ito",
+        "player_nickname": null,
+        "jersey_number": 21,
+        "country_id": 114,
+        "country": "Japan",
+        "team_id": 174,
+        "position_id": 5.0
+    },
+    {
+        "player_id": 396287,
+        "player_name": "Luca Joachim Raimund",
+        "player_nickname": "Luca Raimund",
+        "jersey_number": 40,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 174,
+        "position_id": null
+    },
+    {
+        "player_id": 8670,
+        "player_name": "Timothy Chandler",
+        "player_nickname": null,
+        "jersey_number": 22,
+        "country_id": 241,
+        "country": "United States of America",
+        "team_id": 184,
+        "position_id": null
+    },
+    {
+        "player_id": 40761,
+        "player_name": "Omar Marmoush",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 66,
+        "country": "Egypt",
+        "team_id": 184,
+        "position_id": 24.0
+    },
+    {
+        "player_id": 50429,
+        "player_name": "Hugo Ekitike",
+        "player_nickname": null,
+        "jersey_number": 11,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 184,
+        "position_id": 22.0
+    },
+    {
+        "player_id": 291796,
+        "player_name": "Jean-Matt\u00e9o Bahoya N\u00e9goce",
+        "player_nickname": null,
+        "jersey_number": 19,
+        "country_id": 78,
+        "country": "France",
+        "team_id": 184,
+        "position_id": 20.0
+    },
+    {
+        "player_id": 8241,
+        "player_name": "Felix Passlack",
+        "player_nickname": null,
+        "jersey_number": 15,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 12303,
+        "player_name": "Kevin St\u00f6ger",
+        "player_nickname": null,
+        "jersey_number": 7,
+        "country_id": 15,
+        "country": "Austria",
+        "team_id": 868,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 17593,
+        "player_name": "Andreas Luthe",
+        "player_nickname": null,
+        "jersey_number": 16,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": null
+    },
+    {
+        "player_id": 28603,
+        "player_name": "Philipp Hofmann",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 868,
+        "position_id": 23.0
+    },
+    {
+        "player_id": 44198,
+        "player_name": "Ivan Ordets",
+        "player_nickname": null,
+        "jersey_number": 20,
+        "country_id": 238,
+        "country": "Ukraine",
+        "team_id": 868,
+        "position_id": 3.0
+    },
+    {
+        "player_id": 10823,
+        "player_name": "Maximilian Bauer",
+        "player_nickname": null,
+        "jersey_number": 23,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": null
+    },
+    {
+        "player_id": 24319,
+        "player_name": "Pep Biel Mas Jaume",
+        "player_nickname": "Pep Mas",
+        "jersey_number": 11,
+        "country_id": 214,
+        "country": "Spain",
+        "team_id": 172,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 24442,
+        "player_name": "Mads Pedersen",
+        "player_nickname": null,
+        "jersey_number": 3,
+        "country_id": 61,
+        "country": "Denmark",
+        "team_id": 172,
+        "position_id": 2.0
+    },
+    {
+        "player_id": 85506,
+        "player_name": "Daniel Hausmann",
+        "player_nickname": null,
+        "jersey_number": 46,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": null
+    },
+    {
+        "player_id": 316234,
+        "player_name": "Marcel \u0141ubik",
+        "player_nickname": null,
+        "jersey_number": 33,
+        "country_id": 182,
+        "country": "Poland",
+        "team_id": 172,
+        "position_id": null
+    },
+    {
+        "player_id": 316237,
+        "player_name": "Mert K\u00f6m\u00fcr",
+        "player_nickname": null,
+        "jersey_number": 36,
+        "country_id": 85,
+        "country": "Germany",
+        "team_id": 172,
+        "position_id": 19.0
+    },
+    {
+        "player_id": 316245,
+        "player_name": "Mahmut K\u00fcc\u00fcksahin",
+        "player_nickname": null,
+        "jersey_number": 42,
+        "country_id": 233,
+        "country": "Turkey",
+        "team_id": 172,
+        "position_id": 13.0
+    }
+]
