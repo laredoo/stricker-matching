@@ -1,5 +1,10 @@
 from pathlib import Path
 
+import joblib
+from sklearn.decomposition import PCA
+from sklearn.model_selection import KFold
+from sklearn.preprocessing import StandardScaler
+
 import numpy as np
 import pandas as pd
 
@@ -17,42 +22,52 @@ class FeatureBuilderContext:
         self._plotter = FeaturePlotter()
 
         self._zone_ids = [1, 2, 3, 4, 5]
-        self._event_type_ids = {
-            42: "Ball Receipt",
-            2: "Ball Recovery",
-            3: "Dispossessed",
-            4: "Duel",
-            5: "Camera On*",
-            6: "Block",
-            8: "Offside",
-            9: "Clearance",
-            10: "Interception",
-            14: "Dribble",
-            16: "Shot",
-            17: "Pressure",
-            18: "Half Start*",
-            19: "Substitution",
-            20: "Own Goal Against",
-            21: "Foul Won",
-            22: "Foul Committed",
-            23: "Goal Keeper",
-            24: "Bad Behaviour",
-            25: "Own Goal For",
-            26: "Player On",
-            27: "Player Off",
-            28: "Shield",
-            30: "Pass",
-            33: "50/50",
-            34: "Half End*",
-            35: "Starting XI",
-            36: "Tactical Shift",
-            37: "Error",
-            38: "Miscontrol",
-            39: "Dribbled Past",
-            40: "Injury Stoppage",
-            41: "Referee Ball-Drop",
-            43: "Carry",
-        }
+        self._pca_columns = [
+            "proport_ball_receipt_zone_1",
+            "proport_dribble_zone_1",
+            "proport_pressure_zone_1",
+            "proport_shot_zone_1",
+            "proport_pass_zone_1",
+            "proport_dribbled_past_zone_1",
+            "proport_interception_zone_1",
+            "proport_ball_receipt_zone_2",
+            "proport_dribble_zone_2",
+            "proport_pressure_zone_2",
+            "proport_shot_zone_2",
+            "proport_pass_zone_2",
+            "proport_dribbled_past_zone_2",
+            "proport_interception_zone_2",
+            "proport_ball_receipt_zone_3",
+            "proport_dribble_zone_3",
+            "proport_pressure_zone_3",
+            "proport_shot_zone_3",
+            "proport_pass_zone_3",
+            "proport_dribbled_past_zone_3",
+            "proport_interception_zone_3",
+            "proport_ball_receipt_zone_4",
+            "proport_dribble_zone_4",
+            "proport_pressure_zone_4",
+            "proport_shot_zone_4",
+            "proport_pass_zone_4",
+            "proport_dribbled_past_zone_4",
+            "proport_interception_zone_4",
+            "proport_ball_receipt_zone_5",
+            "proport_dribble_zone_5",
+            "proport_pressure_zone_5",
+            "proport_shot_zone_5",
+            "proport_pass_zone_5",
+            "proport_dribbled_past_zone_5",
+            "proport_interception_zone_5",
+            "proport_pass_short_success",
+            "proport_pass_long_success",
+            "proport_pass_unsuccessful",
+            "proport_shot_all_events",
+            "proport_shot_goal",
+            "proport_shot_on_target",
+            "proport_not_long_shot",
+            "proport_head_all_shots",
+            "proport_shot_not_open_play",
+        ]
 
     def calculate_features(
         self,
@@ -531,3 +546,121 @@ class FeatureBuilderContext:
     ) -> pd.Series:
         avg_xg = shot_events.groupby("player_id")["shot_xg"].mean()
         return avg_xg.reindex(players_list, fill_value=0)
+
+    def _apply_pca(
+        self,
+        features: pd.DataFrame,
+        pca_components: int,
+        plot_pca: bool,
+        viz_dir: Path,
+        random_state: int = 42,
+    ) -> pd.DataFrame:
+        pca_plot_path = viz_dir / "pca" / "pca_variance.png"
+
+        available = [col for col in self._pca_columns if col in features.columns]
+        missing = [col for col in self._pca_columns if col not in features.columns]
+        if missing:
+            self.logger.warning("Missing PCA columns: %s", missing)
+        if not available:
+            return features
+
+        x = features[available].fillna(0.0).to_numpy(dtype=float)
+        max_components = min(max(2, pca_components), x.shape[1])
+        best_components, cv_scores = self._select_pca_components(
+            x,
+            max_components=max_components,
+            random_state=random_state,
+        )
+
+        scaler = StandardScaler()
+        x_scaled = scaler.fit_transform(x)
+        pca = PCA(n_components=best_components, random_state=random_state)
+        pca_values = pca.fit_transform(x_scaled)
+        pca_df = pd.DataFrame(
+            pca_values,
+            columns=[f"pca_{i + 1}" for i in range(pca_values.shape[1])],
+        )
+
+        features = pd.concat([features.drop(columns=available), pca_df], axis=1)
+
+        pca_artifact_path = Path("../../data/artifacts/pca.joblib")
+        pca_artifact_path.parent.mkdir(parents=True, exist_ok=True)
+        joblib.dump(
+            {
+                "scaler": scaler,
+                "pca": pca,
+                "columns": available,
+                "n_components": best_components,
+            },
+            pca_artifact_path,
+        )
+
+        if plot_pca:
+            self._plotter.plot_pca_variance(pca, pca_plot_path, viz_dir)
+            self._plotter.plot_pca_cv(cv_scores, viz_dir)
+
+        return features
+
+    def _pca_cv_errors(
+        self,
+        x: np.ndarray,
+        max_components: int,
+        random_state: int,
+    ) -> dict[int, float]:
+        n_samples = x.shape[0]
+        n_splits = min(5, n_samples) if n_samples > 1 else 1
+        if n_splits < 2:
+            return {max_components: 0.0}
+
+        kfold = KFold(n_splits=n_splits, shuffle=True, random_state=random_state)
+        scores: dict[int, float] = {}
+
+        for n_components in range(2, max_components + 1):
+            fold_errors: list[float] = []
+            for train_idx, test_idx in kfold.split(x):
+                scaler = StandardScaler()
+                x_train = scaler.fit_transform(x[train_idx])
+                x_test = scaler.transform(x[test_idx])
+
+                pca = PCA(n_components=n_components, random_state=random_state)
+                pca.fit(x_train)
+                x_recon = pca.inverse_transform(pca.transform(x_test))
+                fold_errors.append(float(np.mean((x_test - x_recon) ** 2)))
+            scores[n_components] = float(np.mean(fold_errors))
+
+        return scores
+
+    def _pca_elbow_choice(self, scores: dict[int, float]) -> int:
+        components = np.array(sorted(scores.keys()), dtype=float)
+        errors = np.array([scores[int(c)] for c in components], dtype=float)
+
+        if len(components) <= 2:
+            return int(components[-1])
+
+        p1 = np.array([components[0], errors[0]])
+        p2 = np.array([components[-1], errors[-1]])
+        line_vec = p2 - p1
+        line_len = np.linalg.norm(line_vec)
+        if line_len == 0:
+            return int(components[-1])
+
+        line_unit = line_vec / line_len
+        points = np.column_stack([components, errors])
+        projections = p1 + np.outer((points - p1) @ line_unit, line_unit)
+        distances = np.linalg.norm(points - projections, axis=1)
+        elbow_idx = int(np.argmax(distances))
+        return int(components[elbow_idx])
+
+    def _select_pca_components(
+        self, x: np.ndarray, max_components: int, random_state: int
+    ) -> tuple[int, dict[int, float]]:
+        scores = self._pca_cv_errors(
+            x,
+            max_components=max_components,
+            random_state=random_state,
+        )
+
+        if not scores:
+            return max_components, {max_components: 0.0}
+
+        return self._pca_elbow_choice(scores), scores

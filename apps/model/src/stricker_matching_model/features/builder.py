@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Iterable
+
 from tqdm import tqdm
 
 import pandas as pd
@@ -36,14 +37,21 @@ class FeatureBuilder(FeatureBuilderContext):
         data: Iterable[Path],
         output_path: Path = Path("features.json"),
         plot_features: bool = False,
+        plot_pca: bool = False,
+        pca_components: int = 10,
         viz_dir: Path | None = None,
     ) -> list[list[float]]:
         self.logger.info("Starting to build features...")
+
+        if viz_dir is None:
+            viz_dir = Path("data/features/viz")
 
         self._populate_variables(data)
 
         features = self._calculate_features(
             plot_features=plot_features,
+            plot_pca=plot_pca,
+            pca_components=pca_components,
             viz_dir=viz_dir,
         )
 
@@ -54,6 +62,8 @@ class FeatureBuilder(FeatureBuilderContext):
     def _calculate_features(
         self,
         plot_features: bool = False,
+        plot_pca: bool = False,
+        pca_components: int = 10,
         viz_dir: Path | None = None,
     ) -> pd.DataFrame:
 
@@ -69,7 +79,14 @@ class FeatureBuilder(FeatureBuilderContext):
         for block in feature_blocks:
             features = features.join(block.set_index("player_id"), how="left")
 
-        return features.reset_index()
+        features = self._apply_pca(
+            features.reset_index(),
+            pca_components=pca_components,
+            plot_pca=plot_pca,
+            viz_dir=viz_dir,
+        )
+
+        return features
 
     def _player_id_from_file(self, file_path: Path) -> int:
         try:

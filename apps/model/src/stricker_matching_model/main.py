@@ -101,17 +101,19 @@ def _cmd_features(args: argparse.Namespace) -> None:
     output_path = (
         Path(args.output_path)
         if args.output_path
-        else data_path / "processed" / "features" / "features.json"
+        else data_path / "features" / "features.json"
     )
     viz_dir = data_path / "features" / "viz"
     if args.plot_features:
         logger.warning(
             "Feature plotting enabled; this will significantly increase runtime and should not be combined with model execution."
         )
-    result = builder.build(
+    builder.build(
         data_path,
         output_path,
         plot_features=args.plot_features,
+        plot_pca=args.plot_pca,
+        pca_components=args.pca_components,
         viz_dir=viz_dir,
     )
     logger.info("Wrote features")
@@ -170,6 +172,8 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Generate feature plots in data/features/viz",
     )
+    features.add_argument("--plot-pca", action="store_true")
+    features.add_argument("--pca-components", type=int, default=10)
     features.set_defaults(func=_cmd_features)
 
     server = sub.add_parser("server", help="Start the model HTTP service")

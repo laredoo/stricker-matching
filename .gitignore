@@ -214,3 +214,4 @@ __marimo__/
 # Data
 data/processed/
 data/features/
+data/artifacts/

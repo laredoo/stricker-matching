@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from sklearn.decomposition import PCA
 
 import numpy as np
 import pandas as pd
@@ -293,3 +294,61 @@ class FeaturePlotter:
             return 0.0
         num = float(((x - x_mean) * (y - y_mean)).sum())
         return num / denom
+
+    def plot_pca_variance(
+        self, pca: PCA, plot_path: Path | None, viz_dir: Path | None
+    ) -> None:
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            self.logger.warning("matplotlib not installed; skipping PCA plot")
+            return
+
+        if plot_path is None:
+            if viz_dir is None:
+                viz_dir = Path("data/features")
+            plot_path = viz_dir / "pca" / "pca_variance.png"
+
+        plot_path.parent.mkdir(parents=True, exist_ok=True)
+        ratios = pca.explained_variance_ratio_
+        x = list(range(1, len(ratios) + 1))
+
+        fig, ax = plt.subplots(figsize=(8, 4))
+        ax.bar(x, ratios, color="#4C78A8", label="Explained variance")
+        ax.plot(x, ratios.cumsum(), color="#F58518", marker="o", label="Cumulative")
+        ax.set_xlabel("Principal component")
+        ax.set_ylabel("Explained variance ratio")
+        ax.set_title("PCA explained variance")
+        ax.set_xticks(x)
+        ax.legend(frameon=False)
+        fig.tight_layout()
+        fig.savefig(plot_path, dpi=150)
+        plt.close(fig)
+
+    def plot_pca_cv(self, scores: dict[int, float], viz_dir: Path | None) -> None:
+        if not scores:
+            return
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            self.logger.warning("matplotlib not installed; skipping PCA CV plot")
+            return
+
+        if viz_dir is None:
+            viz_dir = Path("data/features/viz")
+        viz_dir.mkdir(parents=True, exist_ok=True)
+        plot_path = viz_dir / "pca" / "pca_cv_error.png"
+        plot_path.parent.mkdir(parents=True, exist_ok=True)
+
+        components = sorted(scores.keys())
+        errors = [scores[n] for n in components]
+
+        fig, ax = plt.subplots(figsize=(8, 4))
+        ax.plot(components, errors, marker="o", color="#4C78A8")
+        ax.set_xlabel("PCA components")
+        ax.set_ylabel("CV reconstruction error")
+        ax.set_title("PCA component selection (CV)")
+        ax.set_xticks(components)
+        fig.tight_layout()
+        fig.savefig(plot_path, dpi=150)
+        plt.close(fig)
