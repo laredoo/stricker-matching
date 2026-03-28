@@ -28,6 +28,8 @@ class FeatureBuilder(FeatureBuilderContext):
         self._matches = dict[str, pd.DataFrame()]
 
         self._features = pd.DataFrame()
+        self._all_players_events = pd.DataFrame()
+        self._all_matches_events = pd.DataFrame()
 
     def build(self, data: Iterable[Path], output_path: Path) -> list[list[float]]:
         self.logger.info("Starting to build features...")
@@ -40,7 +42,9 @@ class FeatureBuilder(FeatureBuilderContext):
 
     def _calculate_features(self) -> pd.DataFrame:
 
-        feature_blocks = self.calculate_features(self._players_list, self._players)
+        feature_blocks = self.calculate_features(
+            self._players_list, self._all_players_events
+        )
 
         features = self._features.set_index("player_id")
 
@@ -92,7 +96,7 @@ class FeatureBuilder(FeatureBuilderContext):
         self._players_list = self._get_ids(self._players_path)
         self._matches_list = self._get_ids(self._matches_path)
 
-        self._features = pd.DataFrame({"player_id": self._players_list}).astype(str)
+        self._features = pd.DataFrame({"player_id": self._players_list})
 
         self.logger.info("Reading player data")
         self._players = {
@@ -102,6 +106,10 @@ class FeatureBuilder(FeatureBuilderContext):
                 total=len(self._players_list),
             )
         }
+        self._all_players_events = pd.concat(
+            [self._players[str(player_id)] for player_id in self._players_list],
+            names=["player_id"],
+        )
 
         self.logger.info("Reading matches data")
         self._matches = {
@@ -111,3 +119,4 @@ class FeatureBuilder(FeatureBuilderContext):
                 total=len(self._matches_files_path_list),
             )
         }
+        self._all_matches_events = pd.concat(self._matches.values(), names=["match_id"])
