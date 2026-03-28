@@ -68,6 +68,9 @@ class FeatureBuilderContext:
             self._calc_involvement_slope(
                 players_list, all_events, plot_features, viz_dir
             ),
+            self._calc_region_shift_delta_x(
+                players_list, all_events, plot_features, viz_dir
+            ),
             self._calc_zone_event_proportions(
                 players_list, all_events, plot_features, viz_dir
             ),
@@ -75,9 +78,6 @@ class FeatureBuilderContext:
                 players_list, all_events, plot_features, viz_dir
             ),
             self._calc_shot_features(players_list, all_events, plot_features, viz_dir),
-            self._calc_region_shift_delta_x(
-                players_list, all_events, plot_features, viz_dir
-            ),
         ]
 
     def _calc_zone_event_proportions(

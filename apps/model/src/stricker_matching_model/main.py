@@ -101,7 +101,7 @@ def _cmd_features(args: argparse.Namespace) -> None:
     output_path = (
         Path(args.output_path)
         if args.output_path
-        else data_path / "processed" / "features" / "player_features.json"
+        else data_path / "processed" / "features" / "features.json"
     )
     viz_dir = data_path / "features" / "viz"
     if args.plot_features:
@@ -114,7 +114,7 @@ def _cmd_features(args: argparse.Namespace) -> None:
         plot_features=args.plot_features,
         viz_dir=viz_dir,
     )
-    logger.info("Wrote feature file to %s", result)
+    logger.info("Wrote features")
 
 
 def _cmd_server(args: argparse.Namespace) -> None:

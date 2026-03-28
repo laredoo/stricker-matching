@@ -34,7 +34,7 @@ class FeatureBuilder(FeatureBuilderContext):
     def build(
         self,
         data: Iterable[Path],
-        output_path: Path,
+        output_path: Path = Path("features.json"),
         plot_features: bool = False,
         viz_dir: Path | None = None,
     ) -> list[list[float]]:
@@ -46,6 +46,8 @@ class FeatureBuilder(FeatureBuilderContext):
             plot_features=plot_features,
             viz_dir=viz_dir,
         )
+
+        self._save_features(features, output_path)
 
         return features.drop(columns=["player_id"]).to_numpy().tolist()
 
@@ -136,3 +138,7 @@ class FeatureBuilder(FeatureBuilderContext):
             )
         }
         self._all_matches_events = pd.concat(self._matches.values(), names=["match_id"])
+
+    def _save_features(self, features: pd.DataFrame, output_path: Path) -> None:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        features.to_json(output_path, orient="records", lines=True)
