@@ -62,6 +62,9 @@ class FeatureBuilderContext:
         viz_dir: Path | None = None,
     ) -> list[pd.DataFrame]:
         return [
+            self._calc_involvement_slope(
+                players_list, all_events, plot_features, viz_dir
+            ),
             self._calc_zone_event_proportions(
                 players_list, all_events, plot_features, viz_dir
             ),
@@ -69,6 +72,9 @@ class FeatureBuilderContext:
                 players_list, all_events, plot_features, viz_dir
             ),
             self._calc_shot_features(players_list, all_events, plot_features, viz_dir),
+            self._calc_region_shift_delta_x(
+                players_list, all_events, plot_features, viz_dir
+            ),
         ]
 
     def _calc_zone_event_proportions(
@@ -206,6 +212,147 @@ class FeatureBuilderContext:
             self._plotter.plot_shot_features(features, viz_dir)
 
         return features
+
+    def _calc_region_shift_delta_x(
+        self,
+        players_list: list[int],
+        all_events: pd.DataFrame,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
+    ) -> pd.DataFrame:
+        events = all_events.dropna(subset=["x", "y", "minute"]).copy()
+
+        first_half = events[events["period"] == 1]
+        final_30 = events[(events["period"] == 2) & (events["minute"] >= 60)]
+
+        c1 = first_half.groupby("player_id")[["x", "y"]].mean()
+        c2 = final_30.groupby("player_id")[["x", "y"]].mean()
+
+        centroids = c1.join(c2, how="outer", lsuffix="_c1", rsuffix="_c2")
+        centroids = centroids.reindex(players_list)
+        centroids["delta_x_region_shift"] = centroids["x_c2"] - centroids["x_c1"]
+
+        features = centroids[["delta_x_region_shift"]].fillna(0)
+        features = features.reset_index()
+
+        if plot_features:
+            self._plotter.plot_region_shift(
+                events,
+                centroids.reset_index(),
+                viz_dir,
+                feature_name="delta_x_region_shift",
+            )
+
+        return features
+
+    def _calc_involvement_slope(
+        self,
+        players_list: list[int],
+        all_events: pd.DataFrame,
+        plot_features: bool = False,
+        viz_dir: Path | None = None,
+    ) -> pd.DataFrame:
+        n_bins = 6
+        involved_type_ids = [
+            42,
+            2,
+            3,
+            4,
+            6,
+            8,
+            9,
+            10,
+            14,
+            16,
+            17,
+            21,
+            22,
+            24,
+            25,
+            28,
+            30,
+            33,
+            34,
+            38,
+            39,
+            43,
+        ]
+
+        events = all_events.dropna(
+            subset=["minute", "period", "type", "match_id"]
+        ).copy()
+        events["type_id"] = events["type"].map(
+            lambda value: value.get("id") if isinstance(value, dict) else value
+        )
+        events = events[events["type_id"].isin(involved_type_ids)]
+
+        if events.empty:
+            features = pd.DataFrame({"player_id": players_list})
+            features["involvement_slope_beta1"] = 0.0
+            return features
+
+        match_minute = events["minute"].astype(float)
+        match_minute = match_minute + np.where(events["period"] == 2, 45.0, 0.0)
+        events["match_minute"] = match_minute
+
+        group_keys = ["player_id", "match_id"]
+        start_minute = events.groupby(group_keys)["match_minute"].transform("min")
+        end_minute = events.groupby(group_keys)["match_minute"].transform("max")
+        duration = end_minute - start_minute
+        bin_size = duration / float(n_bins)
+        relative_minute = events["match_minute"] - start_minute
+        relative_minute = relative_minute.clip(lower=0.0, upper=duration - 1e-6)
+        events["bin_idx"] = (relative_minute / bin_size).astype(int)
+
+        counts = (
+            events.groupby(["player_id", "match_id", "bin_idx"]).size().rename("count")
+        )
+        counts = counts.reset_index()
+        counts = counts.pivot_table(
+            index=["player_id", "match_id"],
+            columns="bin_idx",
+            values="count",
+            fill_value=0,
+        )
+        counts = counts.reindex(columns=range(n_bins), fill_value=0)
+
+        x = np.arange(n_bins, dtype=float)
+        x_mean = float(x.mean())
+        denom = float(((x - x_mean) ** 2).sum())
+        if denom == 0:
+            slopes = pd.Series(0.0, index=counts.index)
+        else:
+            y = counts.to_numpy(dtype=float)
+            y_mean = y.mean(axis=1, keepdims=True)
+            num = ((x - x_mean) * (y - y_mean)).sum(axis=1)
+            slopes = pd.Series(num / denom, index=counts.index)
+
+        slopes = (
+            slopes.groupby(level="player_id").mean().reindex(players_list, fill_value=0)
+        )
+
+        features = pd.DataFrame({"player_id": players_list})
+        features["involvement_slope_beta1"] = slopes.values
+
+        if plot_features:
+            self._plotter.plot_involvement_slope(
+                events,
+                viz_dir,
+                n_bins=n_bins,
+                feature_name="involvement_slope_beta1",
+                involved_type_ids=involved_type_ids,
+            )
+
+        return features
+
+    def _linear_regression_slope(self, x: np.ndarray, y: np.ndarray) -> float:
+        x_mean = float(x.mean())
+        y_mean = float(y.mean())
+        denom = float(((x - x_mean) ** 2).sum())
+        if denom == 0:
+            return 0.0
+        num = float(((x - x_mean) * (y - y_mean)).sum())
+        return num / denom
 
     def _prepare_shot_events(self, all_events: pd.DataFrame) -> pd.DataFrame:
         shot_events = all_events[all_events["type"].str.get("id") == 16].copy()

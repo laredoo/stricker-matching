@@ -47,6 +47,151 @@ class FeaturePlotter:
             bins=20,
         )
 
+    def plot_region_shift(
+        self,
+        events: pd.DataFrame,
+        centroids: pd.DataFrame,
+        viz_dir: Path | None,
+        feature_name: str,
+    ) -> None:
+        if viz_dir is None:
+            return
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            logger.warning(
+                "matplotlib is not installed; skipping plots for %s",
+                feature_name,
+            )
+            return
+
+        viz_dir.mkdir(parents=True, exist_ok=True)
+
+        for row in centroids.itertuples(index=False):
+            player_id = row.player_id
+            player_dir = viz_dir / self._player_id_dirname(player_id)
+            player_dir.mkdir(parents=True, exist_ok=True)
+
+            player_events = events[events["player_id"] == player_id]
+            first_half = player_events[player_events["period"] == 1]
+            final_30 = player_events[
+                (player_events["period"] == 2) & (player_events["minute"] >= 60)
+            ]
+
+            fig, ax = plt.subplots(figsize=(5, 4))
+            if not first_half.empty:
+                ax.scatter(first_half["x"], first_half["y"], s=8, alpha=0.6, label="H1")
+            if not final_30.empty:
+                ax.scatter(
+                    final_30["x"], final_30["y"], s=8, alpha=0.6, label="Final 30"
+                )
+
+            if pd.notna(row.x_c1) and pd.notna(row.y_c1):
+                ax.scatter([row.x_c1], [row.y_c1], s=60, marker="x", label="c1")
+            if pd.notna(row.x_c2) and pd.notna(row.y_c2):
+                ax.scatter([row.x_c2], [row.y_c2], s=60, marker="x", label="c2")
+            if (
+                pd.notna(row.x_c1)
+                and pd.notna(row.y_c1)
+                and pd.notna(row.x_c2)
+                and pd.notna(row.y_c2)
+            ):
+                ax.annotate(
+                    "",
+                    xy=(row.x_c2, row.y_c2),
+                    xytext=(row.x_c1, row.y_c1),
+                    arrowprops={"arrowstyle": "->", "color": "black"},
+                )
+
+            ax.set_title(f"{feature_name}")
+            ax.set_xlabel("x")
+            ax.set_ylabel("y")
+            ax.legend(loc="best")
+            fig.tight_layout()
+            fig.savefig(player_dir / f"{feature_name}.png", dpi=150)
+            plt.close(fig)
+
+    def plot_involvement_slope(
+        self,
+        events: pd.DataFrame,
+        viz_dir: Path | None,
+        n_bins: int,
+        feature_name: str,
+        involved_type_ids: set[int],
+    ) -> None:
+        if viz_dir is None:
+            return
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            logger.warning(
+                "matplotlib is not installed; skipping plots for %s",
+                feature_name,
+            )
+            return
+
+        filtered = events.copy()
+        filtered["type_id"] = filtered["type"].map(
+            lambda value: value.get("id") if isinstance(value, dict) else value
+        )
+        filtered = filtered[filtered["type_id"].isin(involved_type_ids)]
+        if filtered.empty:
+            return
+
+        match_minute = filtered["minute"].astype(float)
+        match_minute = match_minute + np.where(filtered["period"] == 2, 45.0, 0.0)
+        filtered["match_minute"] = match_minute
+
+        group_keys = ["player_id", "match_id"]
+        start_minute = filtered.groupby(group_keys)["match_minute"].transform("min")
+        end_minute = filtered.groupby(group_keys)["match_minute"].transform("max")
+        duration = end_minute - start_minute
+        bin_size = duration / float(n_bins)
+        relative_minute = filtered["match_minute"] - start_minute
+        relative_minute = relative_minute.clip(lower=0.0, upper=duration - 1e-6)
+        filtered["bin_idx"] = (relative_minute / bin_size).astype(int)
+
+        counts = (
+            filtered.groupby(["player_id", "match_id", "bin_idx"])
+            .size()
+            .rename("count")
+        )
+        counts = counts.reset_index()
+        counts = counts.pivot_table(
+            index=["player_id", "match_id"],
+            columns="bin_idx",
+            values="count",
+            fill_value=0,
+        )
+        counts = counts.reindex(columns=range(n_bins), fill_value=0)
+
+        x_idx = np.arange(n_bins, dtype=float)
+        x_fraction = (x_idx + 0.5) / float(n_bins)
+
+        viz_dir.mkdir(parents=True, exist_ok=True)
+
+        for player_id, player_counts in counts.groupby(level=0):
+            y = player_counts.to_numpy(dtype=float)
+            if y.size == 0:
+                continue
+            y_mean = y.mean(axis=0)
+            beta1 = self._linear_regression_slope(x_idx, y_mean)
+            beta0 = float(y_mean.mean()) - beta1 * float(x_idx.mean())
+            y_fit = beta0 + beta1 * x_idx
+
+            player_dir = viz_dir / self._player_id_dirname(player_id)
+            player_dir.mkdir(parents=True, exist_ok=True)
+
+            fig, ax = plt.subplots(figsize=(5, 3.5))
+            ax.scatter(x_fraction, y_mean, s=20, alpha=0.8)
+            ax.plot(x_fraction, y_fit, color="#e45756", linewidth=1.5)
+            ax.set_title(feature_name)
+            ax.set_xlabel("playtime fraction")
+            ax.set_ylabel("events per bin")
+            fig.tight_layout()
+            fig.savefig(player_dir / f"{feature_name}.png", dpi=150)
+            plt.close(fig)
+
     def _plot_feature_distributions(
         self,
         features: pd.DataFrame,
@@ -95,3 +240,12 @@ class FeaturePlotter:
             return str(int(player_id))
         except (TypeError, ValueError):
             return str(player_id)
+
+    def _linear_regression_slope(self, x: np.ndarray, y: np.ndarray) -> float:
+        x_mean = float(x.mean())
+        y_mean = float(y.mean())
+        denom = float(((x - x_mean) ** 2).sum())
+        if denom == 0:
+            return 0.0
+        num = float(((x - x_mean) * (y - y_mean)).sum())
+        return num / denom
