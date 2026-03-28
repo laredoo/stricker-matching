@@ -93,6 +93,18 @@ def _cmd_predict(args: argparse.Namespace) -> None:
         print(json.dumps(output))
 
 
+def _cmd_features(args: argparse.Namespace) -> None:
+    builder = FeatureBuilder()
+    data_path = Path(args.data_path)
+    output_path = (
+        Path(args.output_path)
+        if args.output_path
+        else data_path / "processed" / "features" / "player_features.json"
+    )
+    result = builder.build(data_path, output_path)
+    logger.info("Wrote feature file to %s", result)
+
+
 def _cmd_server(args: argparse.Namespace) -> None:
     uvicorn.run(
         "stricker_matching_model.service.api:app",
@@ -137,6 +149,11 @@ def build_parser() -> argparse.ArgumentParser:
     predict.add_argument("--input-json", required=True)
     predict.add_argument("--output-json")
     predict.set_defaults(func=_cmd_predict)
+
+    features = sub.add_parser("features", help="Build player feature dataset")
+    features.add_argument("--data-path", required=True)
+    features.add_argument("--output-path")
+    features.set_defaults(func=_cmd_features)
 
     server = sub.add_parser("server", help="Start the model HTTP service")
     server.add_argument("--host", default="0.0.0.0")

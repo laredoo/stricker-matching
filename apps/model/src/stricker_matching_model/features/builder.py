@@ -2,7 +2,112 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+from typing import Iterable
+from tqdm import tqdm
 
-class FeatureBuilder:
-    def build(self, data: list[list[float]]) -> list[list[float]]:
-        return data
+import pandas as pd
+
+from stricker_matching_model.base.feature_builder_context import FeatureBuilderContext
+
+
+class FeatureBuilder(FeatureBuilderContext):
+    def __init__(
+        self,
+    ) -> None:
+        super().__init__()
+        self._players_list = []
+
+        self._players_path = None
+        self._matches_path = None
+
+        self._players_files_path_list = []
+        self._matches_files_path_list = []
+
+        self._players = dict[str, pd.DataFrame()]
+        self._matches = dict[str, pd.DataFrame()]
+
+        self._features = pd.DataFrame()
+
+    def build(self, data: Iterable[Path], output_path: Path) -> list[list[float]]:
+        self.logger.info("Starting to build features...")
+
+        self._populate_variables(data)
+
+        features = self._calculate_features()
+
+        return features.drop(columns=["player_id"]).to_numpy().tolist()
+
+    def _calculate_features(self) -> pd.DataFrame:
+
+        feature_blocks = self.calculate_features(self._players_list, self._players)
+
+        features = self._features.set_index("player_id")
+
+        for block in feature_blocks:
+            features = features.join(block.set_index("player_id"), how="left")
+
+        return features.reset_index()
+
+    def _player_id_from_file(self, file_path: Path) -> int:
+        try:
+            return int(file_path.stem)
+        except ValueError:
+            raise ValueError(f"Player file name is not an int id: {file_path.name}")
+
+    def _get_ids(self, path: Path) -> list[int]:
+        return [int(file.stem) for file in sorted(path.glob("*.json"))]
+
+    def _get_data_path(self, path: Path) -> tuple[Path, Path, list[Path], list[Path]]:
+        if not path.exists():
+            raise ValueError(f"Data path {path} not found")
+
+        players_path = path / "processed" / "events" / "players"
+        _players_files_path_list = list(sorted(players_path.glob("*.json")))
+
+        if not players_path.exists():
+            raise ValueError(f"Players path {players_path} not found")
+
+        matches_path = path / "processed" / "events" / "matches"
+        _matches_files_path_list = list(sorted(matches_path.glob("*.json")))
+
+        if not matches_path.exists():
+            raise ValueError(f"Matches path {matches_path} not found")
+
+        return (
+            players_path,
+            matches_path,
+            _players_files_path_list,
+            _matches_files_path_list,
+        )
+
+    def _populate_variables(self, data: Iterable[Path]) -> None:
+        (
+            self._players_path,
+            self._matches_path,
+            self._players_files_path_list,
+            self._matches_files_path_list,
+        ) = self._get_data_path(data)
+
+        self._players_list = self._get_ids(self._players_path)
+        self._matches_list = self._get_ids(self._matches_path)
+
+        self._features = pd.DataFrame({"player_id": self._players_list}).astype(str)
+
+        self.logger.info("Reading player data")
+        self._players = {
+            str(player_id): pd.read_json(file_path)
+            for player_id, file_path in tqdm(
+                zip(self._players_list, self._players_files_path_list),
+                total=len(self._players_list),
+            )
+        }
+
+        self.logger.info("Reading matches data")
+        self._matches = {
+            str(match_id): pd.read_json(file_path)
+            for match_id, file_path in tqdm(
+                zip(self._matches_list, self._matches_files_path_list),
+                total=len(self._matches_files_path_list),
+            )
+        }
