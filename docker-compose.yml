@@ -1,0 +1,14 @@
+version: "0.1.0"
+
+services:
+  model:
+    build:
+      context: .
+      dockerfile: apps/model/Dockerfile
+    environment:
+      STRICKER_LOG_LEVEL: INFO
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+    command: ["python", "-m", "stricker_matching_model.main", "server", "--host", "0.0.0.0", "--port", "8001"]
