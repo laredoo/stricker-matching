@@ -43,6 +43,9 @@ dev = [
 viz = [
   "mplsoccer==1.6.1"
 ]
+test = [
+  "pytest>=9.0.2",
+]
 
 
 [tool.commitizen]
